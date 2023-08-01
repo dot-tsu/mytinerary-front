@@ -20,7 +20,7 @@ const Navbar = () => {
                 <a href="#" className="btn btn-ghost normal-case text-xl">
                     <img src={logo} alt="MyTinerary logo" className="h-full" />
                     <div className='flex'>
-                        <span className='text-primary block'>My</span><span className='text-secondary block'>Tinerary</span>
+                        <span className='text-primary'>My</span><span className='text-secondary'>Tinerary</span>
                     </div>
                 </a>
             </div>
