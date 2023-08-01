@@ -2,10 +2,14 @@
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        sans: ["Fira Sans", "Roboto Mono", "Prompt", "sans-serif"],
+      },
+    },
   },
   plugins: [require("daisyui")],
   daisyui: {
-    themes: ["emerald", "dark"],
+    themes: ["autumn", "dark"],
   },
 };
