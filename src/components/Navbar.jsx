@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import logo from '../assets/logo.svg';
 
 const Navbar = () => {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -15,8 +16,12 @@ const Navbar = () => {
         <nav className="navbar bg-base-100">
             {/* Logo */}
             <div className="flex-1">
+
                 <a href="#" className="btn btn-ghost normal-case text-xl">
-                    My Tinerary
+                    <img src={logo} alt="MyTinerary logo" className="h-full" />
+                    <div className='flex'>
+                        <span className='text-primary block'>My</span><span className='text-secondary block'>Tinerary</span>
+                    </div>
                 </a>
             </div>
 
