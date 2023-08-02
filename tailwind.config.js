@@ -4,7 +4,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["Fira Sans", "Roboto Mono", "Prompt", "sans-serif"],
+        sans: ["Nunito", "Roboto Mono", "sans-serif"],
       },
     },
   },
