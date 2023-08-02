@@ -19,10 +19,10 @@ function Homepage() {
                 {/* Hero Content */}
                 <div className="hero-content text-center text-neutral-content relative -z-1 fade-in-bottom">
                     <div className="max-w-xl mx-auto">
-                        <div className="mt-[-350px] animate-fadeIn">
-                            <h1 className="mb-5 font-black text-5xl sm:text-8xl"><span className='text-primary'>My</span><span className='text-secondary'>Tinerary</span></h1>
-                            <p className="mb-5 text-xl font-bold text-base-100">Find your perfect trip, designed by insiders who know and love their cities.</p>
-                            <button className="btn btn-wide">Get Started</button>
+                        <div className="mt-[-250px] animate-fadeIn">
+                            <h1 className="mb-5 font-black text-5xl md:text-7xl"><span className='text-primary'>My</span><span className='text-secondary'>Tinerary</span></h1>
+                            <p className="mb-5 text-sm md:text-xl font-bold text-base-100">Find your perfect trip, designed by insiders who know and love their cities.</p>
+                            <button className="btn lg:btn-wide">Get Started</button>
                         </div>
                     </div>
                 </div>

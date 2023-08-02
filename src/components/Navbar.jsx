@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import logo from '../assets/logo.svg';
 
 const Navbar = () => {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const [isScrolled, setIsScrolled] = useState(false);
 
     const handleLoginClick = () => {
         setIsLoggedIn(true);
@@ -12,9 +13,21 @@ const Navbar = () => {
         setIsLoggedIn(false);
     };
 
+    const handleScroll = () => {
+        const scrolled = window.scrollY > 0;
+        setIsScrolled(scrolled);
+    };
+
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
     return (
         <>
-            <nav className="navbar bg-base-100 ">
+            <nav className={`navbar bg-transparent fixed z-20 top-0 w-full text-white ${isScrolled ? 'bg-white text-black' : ''} transition-all ease-in-out delay-100`}>
                 {/* Burger Menu */}
                 <div className="navbar-start">
                     <div className="lg:hidden">
