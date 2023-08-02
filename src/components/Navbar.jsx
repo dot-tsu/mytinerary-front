@@ -30,7 +30,7 @@ const Navbar = () => {
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" />
                             </svg>
                         </label>
-                        <div className="drawer-side">
+                        <div className="drawer-side z-10">
                             <label htmlFor="my-drawer-3" className="drawer-overlay"></label>
                             <ul className="menu p-4 w-80 h-full bg-base-200">
                                 <li>
@@ -69,7 +69,7 @@ const Navbar = () => {
                 {/* Profile Menu */}
                 {isLoggedIn ? (
                     <div className="navbar-end">
-                        <div className="dropdown dropdown-end">
+                        <div className="dropdown dropdown-end z-10">
                             <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                                 <div className="w-10 rounded-full">
                                     <img
@@ -78,7 +78,7 @@ const Navbar = () => {
                                     />
                                 </div>
                             </label>
-                            <ul className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
+                            <ul className="mt-3 p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
                                 <li>
                                     <a href="#" className="justify-between">
                                         Profile
