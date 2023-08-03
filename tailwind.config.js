@@ -3,13 +3,33 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
-      fontFamily: {
-        
-      },
+      fontFamily: {},
     },
   },
   plugins: [require("daisyui")],
   daisyui: {
-    themes: ["autumn", "dark"],
+    themes: [
+      {
+        mytinerary: {
+          primary: "#587478",
+
+          secondary: "#F2958D",
+
+          accent: "#D95F5F",
+
+          neutral: "#293C46",
+
+          "base-100": "#D9D8D7",
+
+          info: "#4261eb",
+
+          success: "#4be2c6",
+
+          warning: "#f3ad20",
+
+          error: "#ef654d",
+        },
+      },
+    ],
   },
 };
