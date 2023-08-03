@@ -8,7 +8,7 @@ function Footer() {
                 <img src={logo} alt="Joyamate logo" className="h-[100px]" />
                 <p className="mx-auto font-bold">2023 © | MyTinerary. All rights reserved.</p>
                 <p className="mx-auto">
-                    Web app made with ❤ by
+                    Web app made with ❤ by &nbsp;
                     <a href="https://www.linkedin.com/in/luca-di-marco/" className="link link-hover" target="_blank" rel="noopener noreferrer">
                         tsu
                     </a>
