@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import logo from '../assets/logo.svg';
+import logo from '../assets/logo.png';
 
 const BurgerMenu = () => {
     return (
