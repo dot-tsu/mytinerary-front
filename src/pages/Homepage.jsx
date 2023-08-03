@@ -1,36 +1,54 @@
 import React from 'react';
 import MainLayout from '../layouts/MainLayout';
-import originalImage from '../assets/originalbg.png';
-import roadCutoutImage from '../assets/roadbg.png';
+import originalImage from '../assets/originalbg.jpg';
+import cuttedImage from '../assets/cuttedbg.png';
 
 function Homepage() {
   return (
     <MainLayout>
-      <div className="hero min-h-screen relative overflow-hidden">
+      <div className="hero min-h-screen relative overflow-hidden flex">
         {/* Parallax background */}
-        <div
-          className="absolute inset-0 w-full h-full bg-cover bg-center z-[-2]"
-          style={{ backgroundImage: `url(${originalImage})` }}
-        ></div>
+        <img
+          src={originalImage}
+          alt="Person in landscape"
+          draggable="false"
+          className="w-full h-full object-cover object-center pointer-events-none -z-50 fixed brightness-50"
+        />
 
-        <div className="absolute inset-0 w-full z-1">
-          <img src={roadCutoutImage} alt="Road Cutout" draggable="false" className="w-full h-full object-cover object-center pointer-events-none" />
-        </div>
+        {/* SVG Shape */}
+        <svg
+          className="absolute bottom-0 left-0 w-full text-white -z-40"
+          viewBox="0 0 720 320"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fill="white"
+            d="M0,128 C60,192 180,320 360,320 C540,320 660,192 720,128 L720,320 L0,320Z"
+          ></path>
+        </svg>
 
         {/* Hero Content */}
-        <div className="hero-content text-center text-neutral-content relative z-0 fade-in-bottom">
-          <div className="max-w-xl mx-auto">
-            <div className="mt-[-250px] animate-fadeIn">
-              <h1 className="mb-5 font-black text-5xl md:text-7xl">
-                <span className="text-primary">My</span>
-                <span className="text-secondary">Tinerary</span>
-              </h1>
-              <p className="mb-5 text-sm md:text-xl font-bold text-base-100">Find your perfect trip, designed by insiders who know and love their cities.</p>
-              <button className="btn lg:btn-wide">Get Started</button>
-            </div>
-          </div>
+        <div className="hero-content h-full z-10 flex flex-col w-4/5 md:w-3/5 text-white">
+          <h1 className="text-5xl md:text-7xl xl:text-9xl font-bold">
+            My<span className="">Tinerary</span>
+          </h1>
+          <p className="text-sm xl:text-xl font-thin md:mx-10">
+            Find your perfect trip, designed by insiders who know and love their cities.
+          </p>
+          <button className="btn btn-outline border-white text-white md:btn-wide">
+            Get Started
+          </button>
         </div>
+
+        {/* Person Cutout */}
+        <img
+          src={cuttedImage}
+          alt="Person Cutout"
+          draggable="false"
+          className="inset w-full h-full object-cover object-center pointer-events-none fixed -z-30 brightness-50"
+        />
       </div>
+      <div className='h-screen bg-white'>TestPage</div>
     </MainLayout>
   );
 }
