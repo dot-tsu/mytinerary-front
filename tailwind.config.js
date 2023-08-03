@@ -5,11 +5,9 @@ export default {
     extend: {
       fontFamily: {
         sans: ["Nunito", "Roboto Mono", "sans-serif"],
+        serif: ["Sniglet", "serif"],
       },
     },
   },
   plugins: [require("daisyui")],
-  daisyui: {
-    themes: ["autumn", "dark"],
-  },
 };
