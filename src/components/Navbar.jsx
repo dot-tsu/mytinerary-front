@@ -31,11 +31,11 @@ const BurgerMenu = () => {
     );
 };
 
-const DesktopMenu = () => {
+const DesktopMenu = ({ isScrolled }) => {
     return (
         <div className="navbar-start hidden lg:flex">
             <div className="flex-none gap-2">
-                <ul className="menu menu-horizontal px-1 text-lg">
+                <ul className={`menu menu-horizontal px-1 text-lg ${isScrolled ? 'text-black' : 'text-white'}`}>
                     <li>
                         <a href='/'>Home</a>
                     </li>
@@ -130,10 +130,10 @@ const Navbar = () => {
 
     return (
         <nav
-            className={`navbar bg-transparent fixed z-20 top-0 w-full text-white ${isScrolled ? 'bg-white text-black' : ''} transition-all ease-in-out delay-100`}
+            className={`navbar bg-transparent fixed z-20 top-0 w-full ${isScrolled ? 'bg-white' : ''} transition-all ease-in-out delay-100`}
         >
             <BurgerMenu />
-            <DesktopMenu />
+            <DesktopMenu isScrolled={isScrolled} />
             <Logo isScrolled={isScrolled} />
             <ProfileMenu isLoggedIn={isLoggedIn} handleLogoutClick={handleLogoutClick} handleLoginClick={handleLoginClick} />
         </nav>
