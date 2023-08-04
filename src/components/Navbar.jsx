@@ -54,7 +54,7 @@ const Logo = ({ isScrolled }) => {
             <a href="#" className="btn btn-ghost normal-case text-xl">
                 <img src={logo} alt="MyTinerary logo" className="h-12" />
                 <div>
-                    <span className="text-primary">My</span>
+                    <span className="text-black">My</span>
                     <span className="text-secondary">Tinerary</span>
                 </div>
             </a>
