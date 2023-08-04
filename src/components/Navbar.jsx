@@ -62,7 +62,7 @@ const Logo = ({ isScrolled }) => {
     );
 };
 
-const ProfileMenu = ({ isLoggedIn, handleLogoutClick, handleLoginClick }) => {
+const ProfileMenu = ({ isLoggedIn, handleLogoutClick, handleLoginClick, isScrolled }) => {
     if (isLoggedIn) {
         return (
             <div className="navbar-end">
@@ -96,7 +96,8 @@ const ProfileMenu = ({ isLoggedIn, handleLogoutClick, handleLoginClick }) => {
     } else {
         return (
             <div className="navbar-end">
-                <button className="btn btn-secondary font-bold" onClick={handleLoginClick}>
+                <button className={
+                    `btn btn-ghost font-bold ${isScrolled ? 'text-black' : 'text-white'}` }onClick={handleLoginClick}>
                     Login
                 </button>
             </div>
@@ -135,7 +136,7 @@ const Navbar = () => {
             <BurgerMenu />
             <DesktopMenu isScrolled={isScrolled} />
             <Logo isScrolled={isScrolled} />
-            <ProfileMenu isLoggedIn={isLoggedIn} handleLogoutClick={handleLogoutClick} handleLoginClick={handleLoginClick} />
+            <ProfileMenu isLoggedIn={isLoggedIn} isScrolled={isScrolled} handleLogoutClick={handleLogoutClick} handleLoginClick={handleLoginClick} />
         </nav>
     );
 };
