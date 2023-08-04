@@ -2,9 +2,9 @@ import React from 'react'
 import originalImage from '../assets/originalbg.jpg';
 import cuttedImage from '../assets/cuttedbg.png';
 
-function Hero() {
+function Home() {
     return (
-        <div className="hero min-h-screen relative overflow-hidden flex">
+        <section id="home" className="hero min-h-screen relative overflow-hidden flex">
             {/* Parallax background */}
             <img
                 src={originalImage}
@@ -45,8 +45,8 @@ function Hero() {
                 draggable="false"
                 className="inset w-full h-full object-cover object-center pointer-events-none fixed -z-30 brightness-50"
             />
-        </div>
+        </section>
     )
 }
 
-export default Hero
+export default Home
