@@ -13,7 +13,7 @@ export default {
         mytinerary: {
           primary: "#587478",
 
-          secondary: "#F2958D",
+          secondary: "#D44949",
 
           accent: "#D95F5F",
 
