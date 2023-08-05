@@ -3,7 +3,7 @@ import logo from '../assets/logo.png';
 
 function Footer() {
     return (
-        <footer className="footer p-10 text-base bg-base-200">
+        <footer className="footer p-10 text-base bg-base-100">
             <div className="flex flex-col items-center mb-6">
                 <img src={logo} alt="Joyamate logo" className="h-[100px]" />
                 <p className="mx-auto font-bold">2023 © | MyTinerary. All rights reserved.</p>
