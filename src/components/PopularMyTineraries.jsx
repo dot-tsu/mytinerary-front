@@ -36,9 +36,9 @@ function PopularMyTineraries() {
     };
 
     return (
-        <section id="popularMyTineraries" className='min-h-screen bg-white flex justify-center flex-col'>
+        <section id="popularMyTineraries" className='min-h-screen bg-white flex justify-center flex-col py-5'>
             <div className='mx-10'>
-                <h1 className='font-bold text-4xl text-primary mb-5 text-center'>Explore your next favorite destination</h1>
+                <h1 className='font-bold text-4xl text-primary mb-5  mt-10 text-center'>Explore your next favorite destination</h1>
                 <p className='text-center font-light text-md sm:text-lg'>Get ideas from guides all around the world - with helpful tips and suggestions from the MyTinerary community.</p>
                 <div className='card shadow-lg'>
                     <div className='m-3'>
