@@ -1,22 +1,22 @@
 import React, { useState } from 'react';
+import data from '../data/data.json';
 
 const Carousel = ({ currentSlide }) => {
     const imagesPerSlide = 4;
 
     return (
         <div className="relative">
-            <div className="flex flex-wrap h-fit justify-center align-middle">
-                {Array.from({ length: imagesPerSlide }).map((_, index) => {
-                    const imageIndex = currentSlide * imagesPerSlide + index + 1;
+            <div className="h-fit justify-center align-middle grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2 md:gap-4">
+                {data.slice(currentSlide * imagesPerSlide, (currentSlide + 1) * imagesPerSlide).map((item, index) => {
                     return (
-                        <a key={index} className="carousel-slide w-1/2 md:w-1/4 cursor-pointer relative group">
+                        <a key={index} className="cursor-pointer relative group">
                             <img
-                                src={`https://via.placeholder.com/300?text=Slide ${currentSlide + 1} - Image ${imageIndex}`}
-                                alt={`Slide${currentSlide + 1}-Image${imageIndex}`}
-                                className="w-full h-full object-cover rounded-sm transition-all brightness-50 group-hover:brightness-100"
+                                src={item.image_url}
+                                alt={`Slide${currentSlide + 1}-Image${item.id}`}
+                                className="w-full h-32 md:h-56 object-cover rounded-sm transition-all brightness-50 group-hover:brightness-100"
                             />
                             <div className="absolute bottom-0 left-0 p-2 text-white group-hover:opacity-0 transition-opacity">
-                                <h3 className="text-lg md:text-2xl font-semibold">City {imageIndex}</h3>
+                                <h3 className="text-lg md:text-2xl font-semibold">{item.city}</h3>
                                 <div className='flex items-center'>
                                     <svg className="h-4" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
@@ -26,11 +26,10 @@ const Carousel = ({ currentSlide }) => {
                                             <path d="M12 12C13.1046 12 14 11.1046 14 10C14 8.89543 13.1046 8 12 8C10.8954 8 10 8.89543 10 10C10 11.1046 10.8954 12 12 12Z" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"></path>
                                         </g>
                                     </svg>
-                                    <h4 className="text-xs md:text-sm">Country {imageIndex}</h4>
+                                    <h4 className="text-xs md:text-sm">{item.country}</h4>
                                 </div>
                             </div>
                         </a>
-
                     );
                 })}
             </div>
@@ -40,7 +39,7 @@ const Carousel = ({ currentSlide }) => {
 
 function PopularMyTineraries() {
     const [currentSlide, setCurrentSlide] = useState(0);
-    const totalSlides = 3;
+    const totalSlides = Math.ceil(data.length / 4);
 
     const prevSlide = () => {
         setCurrentSlide((currentSlideIndex) => (currentSlideIndex > 0 ? currentSlideIndex - 1 : totalSlides - 1));
@@ -54,7 +53,7 @@ function PopularMyTineraries() {
         <section id="popularMyTineraries" className='min-h-screen bg-white flex justify-center flex-col py-5'>
             <div className='mx-10'>
                 <h1 className='font-bold text-4xl text-primary mb-5  mt-10 text-center'>Explore your next favorite destination</h1>
-                <p className='text-center font-light text-md sm:text-lg'>Get ideas from guides all around the world - with helpful tips and suggestions from the MyTinerary community.</p>
+                <p className='text-center font-light text-md sm:text-lg'>Discover amazing places around the world and plan your next adventure with MyTinerary.</p>
                 <div className='card shadow-lg'>
                     <div className='m-3'>
                         <div className='grid grid-cols-3'>

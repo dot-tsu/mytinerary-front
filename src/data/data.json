@@ -1,0 +1,98 @@
+[
+  {
+    "id": 1,
+    "city": "Salta",
+    "country": "Argentina",
+    "image_url": "https://images.unsplash.com/photo-1582166571224-a33b0ec837b2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1091&q=80",
+    "description": "Salta is a charming city located in the northwestern part of Argentina. It is known for its colonial architecture, stunning landscapes, and rich Andean culture. Salta offers visitors a taste of traditional Argentinian life and is a gateway to exploring the scenic Quebrada de Cafayate.",
+    "isPopular": true
+  },
+  {
+    "id": 2,
+    "city": "Rio de Janeiro",
+    "country": "Brazil",
+    "image_url": "https://images.unsplash.com/photo-1518639192441-8fce0a366e2e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80",
+    "description": "Rio de Janeiro is a city of stunning natural beauty, with its famous beaches like Copacabana and Ipanema, Sugarloaf Mountain, and the Christ the Redeemer statue. It is known for its vibrant carnival, samba music, and lively atmosphere.",
+    "isPopular": true
+  },
+  {
+    "id": 3,
+    "city": "Lima",
+    "country": "Peru",
+    "image_url": "https://images.unsplash.com/photo-1577587230708-187fdbef4d91?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80",
+    "description": "Lima, the capital of Peru, is a city with a rich history and a fusion of cultures. It is renowned for its archaeological sites, including the ancient Incan city of Machu Picchu. Lima is also famous for its diverse culinary scene.",
+    "isPopular": true
+  },
+  {
+    "id": 4,
+    "city": "Santiago",
+    "country": "Chile",
+    "image_url": "https://images.unsplash.com/photo-1597006438013-0f0cca2c1a03?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80",
+    "description": "Santiago, the capital of Chile, is a modern city surrounded by the Andes Mountains. It offers a mix of historical and contemporary architecture, along with cultural attractions and delicious Chilean wine.",
+    "isPopular": true
+  },
+  {
+    "id": 5,
+    "city": "Bogotá",
+    "country": "Colombia",
+    "image_url": "https://images.unsplash.com/photo-1577587230708-187fdbef4d91?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80",
+    "description": "Bogotá is the vibrant capital of Colombia, set in the Andean region. It is a city of contrasts, featuring a historic center, modern skyscrapers, and beautiful street art. Bogotá offers a diverse cultural experience and lively nightlife.",
+    "isPopular": true
+  },
+  {
+    "id": 6,
+    "city": "Quito",
+    "country": "Ecuador",
+    "image_url": "https://images.unsplash.com/photo-1628004581461-13dd6f81ed07?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80",
+    "description": "Quito, the capital of Ecuador, is a city surrounded by mountains and home to well-preserved colonial architecture. It is the highest capital city in the world and a UNESCO World Heritage site. Quito provides access to the Galapagos Islands and other natural wonders.",
+    "isPopular": true
+  },
+  {
+    "id": 7,
+    "city": "Montevideo",
+    "country": "Uruguay",
+    "image_url": "https://images.unsplash.com/photo-1598289993193-5efe1657f971?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80",
+    "description": "Montevideo is the capital of Uruguay, located on the shores of the Rio de la Plata. It offers a laid-back atmosphere, beautiful beaches, and a mix of European and Latin American influences. Montevideo is known for its tango music and historical landmarks.",
+    "isPopular": true
+  },
+  {
+    "id": 8,
+    "city": "La Paz",
+    "country": "Bolivia",
+    "image_url": "https://images.unsplash.com/photo-1514907988683-d173529692b9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
+    "description": "La Paz is the administrative capital of Bolivia, situated in a valley surrounded by mountains. It is a city known for its indigenous culture, vibrant markets, and unique topography. La Paz is one of the highest capital cities in the world.",
+    "isPopular": true
+  },
+  {
+    "id": 9,
+    "city": "Medellín",
+    "country": "Colombia",
+    "image_url": "https://images.unsplash.com/photo-1515366974328-f1181eb25189?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1476&q=80",
+    "description": "Medellín, located in a valley in the Colombian Andes, is a city with a fascinating transformation. It has evolved into a modern, innovative, and artistic hub, known for its pleasant climate, friendly locals, and vibrant street art.",
+    "isPopular": true
+  },
+  {
+    "id": 10,
+    "city": "Cusco",
+    "country": "Peru",
+    "image_url": "https://images.unsplash.com/photo-1593494441374-bad54249d0e8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1473&q=80",
+    "description": "Cusco, once the capital of the Inca Empire, is a city steeped in history and culture. It serves as the gateway to Machu Picchu and offers a blend of Incan and Spanish colonial architecture.",
+    "isPopular": true
+  },
+  {
+    "id": 11,
+    "city": "Asunción",
+    "country": "Paraguay",
+    "image_url": "https://images.unsplash.com/photo-1655775130751-981a0e343d6f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1632&q=80",
+    "description": "Asunción is the capital of Paraguay, situated on the Paraguay River. It is a city with a mix of modern and colonial architecture, lush parks, and a thriving riverfront area. Asunción offers a glimpse into Paraguayan culture and history.",
+    "isPopular": true
+  },
+  {
+    "id": 12,
+    "city": "Buenos Aires",
+    "country": "Argentina",
+    "image_url": "https://images.unsplash.com/photo-1611865422861-391cf5f3ba49?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1657&q=80",
+    "description": "Buenos Aires is the vibrant capital of Argentina, known for its tango music, passionate soccer fans, and European-style architecture. It offers a mix of cultural experiences, delicious food, and exciting nightlife.",
+    "isPopular": true
+  }
+]
