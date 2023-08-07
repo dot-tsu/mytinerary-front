@@ -6,14 +6,14 @@ const Carousel = ({ currentSlide }) => {
 
     return (
         <div className="relative">
-            <div className="h-fit justify-center align-middle grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2 md:gap-4">
+            <div className="h-fit justify-center align-middle grid grid-cols-1 sm:grid-cols-2 gap-2 md:gap-4">
                 {data.slice(currentSlide * imagesPerSlide, (currentSlide + 1) * imagesPerSlide).map((item, index) => {
                     return (
                         <a key={index} className="cursor-pointer relative group">
                             <img
                                 src={item.image_url}
                                 alt={`Slide${currentSlide + 1}-Image${item.id}`}
-                                className="w-full h-32 md:h-56 object-cover rounded-sm transition-all brightness-50 group-hover:brightness-100"
+                                className="w-full h-32 md:h-56 lg:h-64 object-cover rounded-md transition-all brightness-50 group-hover:brightness-100"
                             />
                             <div className="absolute bottom-0 left-0 p-2 text-white group-hover:opacity-0 transition-opacity">
                                 <h3 className="text-lg md:text-2xl font-semibold">{item.city}</h3>
@@ -51,7 +51,7 @@ function PopularMyTineraries() {
 
     return (
         <section id="popularMyTineraries" className='min-h-screen bg-gradient-to-b from-white to-base-100 flex justify-center flex-col py-5'>
-            <div className='mx-10'>
+            <div className='mx-20'>
                 <h1 className='font-bold text-4xl text-primary mb-5 mt-10 text-center'>Explore your next favorite destination</h1>
                 <p className='text-center font-light text-md sm:text-lg mb-10'>Discover amazing places around the world and plan your next adventure with MyTinerary.</p>
                 <div className='card bg-white shadow-lg'>
