@@ -50,11 +50,11 @@ function PopularMyTineraries() {
     };
 
     return (
-        <section id="popularMyTineraries" className='min-h-screen bg-white flex justify-center flex-col py-5'>
+        <section id="popularMyTineraries" className='min-h-screen bg-gradient-to-b from-white to-base-100 flex justify-center flex-col py-5'>
             <div className='mx-10'>
-                <h1 className='font-bold text-4xl text-primary mb-5  mt-10 text-center'>Explore your next favorite destination</h1>
-                <p className='text-center font-light text-md sm:text-lg'>Discover amazing places around the world and plan your next adventure with MyTinerary.</p>
-                <div className='card shadow-lg'>
+                <h1 className='font-bold text-4xl text-primary mb-5 mt-10 text-center'>Explore your next favorite destination</h1>
+                <p className='text-center font-light text-md sm:text-lg mb-10'>Discover amazing places around the world and plan your next adventure with MyTinerary.</p>
+                <div className='card bg-white shadow-lg'>
                     <div className='m-3'>
                         <div className='grid grid-cols-3'>
                             <h2 className='card-title mx-5 col-span-2 flex font-light text-secondary text-sm md:text-2xl'>Popular MyTineraries</h2>
