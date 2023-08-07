@@ -20,13 +20,22 @@ The following features were implemented during Sprint 1:
 2. Hero/Welcome Section:
 
     - The hero/welcome section displays the name of the MyTinerary app and the slogan: "Find your perfect trip, designed by insiders who know and love their cities!"
+    
 
 3. Call to Action:
 
     - The home page includes an eye-catching call to action, inviting users to click and access the "Cities" page.
     - The call to action is visually complemented with images and animations to make it attractive and engaging.
 
-4. Footer:
+4. Carousel:
+
+    - A carousel has been implemented on the home page, displaying slides that change automatically.
+    - The carousel contains the title "Popular Mytineraries" and three slides, each containing four photos of different cities in the world.
+    - The carousel is dynamic, with the rendering of slides and photos generated programmatically (not hardcoded).
+    - Each photo in the carousel corresponds to a city in the world, and the city's name is indicated on the photo.
+    - The information about the cities and their photos are harcoded in a data.json as there is no database yet.
+
+5. Footer:
 
     - The footer recaps the information about the site.
     - It contains another navigation menu to ease user navigation.
