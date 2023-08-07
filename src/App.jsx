@@ -1,11 +1,24 @@
+import { RouterProvider, createBrowserRouter } from "react-router-dom"
+import MainLayout from "./layouts/MainLayout"
+import Cities from "./pages/Cities"
+import Homepage from "./pages/Homepage"
+import PageNotFound from "./pages/PageNotFound"
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <MainLayout />,
+    errorElement: <PageNotFound />,
+    children: [
+      { path: "/", element: <Homepage /> },
+      { path: "/cities", element: <Cities /> }
+    ]
+  }
+])
+
 function App() {
   return (
-    <>
-     <h1 className="text-3xl font-bold underline text-center">
-      Hello world!
-    </h1>
-    <button class="btn btn-primary">Button</button>
-    </>
+    <RouterProvider router={router} />
   )
 }
 
