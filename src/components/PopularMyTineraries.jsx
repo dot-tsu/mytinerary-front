@@ -1,8 +1,18 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import data from '../data/data.json';
 
-const Carousel = ({ currentSlide }) => {
+const Carousel = ({ currentSlide, setCurrentSlide }) => {
     const imagesPerSlide = 4;
+    const totalSlides = Math.ceil(data.length / imagesPerSlide);
+
+    const autoChangeSlide = () => {
+        setCurrentSlide((currentSlideIndex) => (currentSlideIndex < totalSlides - 1 ? currentSlideIndex + 1 : 0));
+    };
+
+    useEffect(() => {
+        const interval = setInterval(autoChangeSlide, 5000); // 5 seconds
+        return () => clearInterval(interval);
+    }, [currentSlide]);
 
     return (
         <div className="relative">
@@ -67,12 +77,12 @@ function PopularMyTineraries() {
                                 </button>
                             </div>
                         </div>
-                        <Carousel currentSlide={currentSlide} />
+                        <Carousel currentSlide={currentSlide} setCurrentSlide={setCurrentSlide} />
                     </div>
                 </div>
             </div>
         </section>
-    )
+    );
 }
 
 export default PopularMyTineraries;
