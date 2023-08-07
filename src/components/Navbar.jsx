@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
+import { Link } from 'react-router-dom';
 import logo from '../assets/logo.png';
 
 const BurgerMenu = () => {
@@ -20,14 +21,18 @@ const BurgerMenu = () => {
                 <label htmlFor="my-drawer-3" className="drawer-overlay"></label>
                 <ul className="menu p-4 w-80 h-full bg-base-200">
                     <li>
-                        <a>Home</a>
+                        <Link to="/">
+                            Home
+                        </Link>
                     </li>
                     <li>
-                        <a>Cities</a>
+                        <Link to="/cities">
+                            Cities
+                        </Link>
                     </li>
                 </ul>
             </div>
-        </div>
+        </div >
     );
 };
 
@@ -37,10 +42,14 @@ const DesktopMenu = ({ isScrolled }) => {
             <div className="flex-none gap-2">
                 <ul className={`menu menu-horizontal px-1 text-lg ${isScrolled ? 'text-black' : 'text-white'}`}>
                     <li>
-                        <a href='/'>Home</a>
+                        <Link to="/">
+                            Home
+                        </Link>
                     </li>
                     <li>
-                        <a href='/cities'>Cities</a>
+                        <Link to="/cities">
+                            Cities
+                        </Link>
                     </li>
                 </ul>
             </div>
@@ -51,13 +60,15 @@ const DesktopMenu = ({ isScrolled }) => {
 const Logo = ({ isScrolled }) => {
     return (
         <div className={`navbar-center transition-all ease-in-out delay-95 ${isScrolled ? '' : 'invisible'}`}>
-            <a href="#" className="btn btn-ghost normal-case text-xl">
-                <img src={logo} alt="MyTinerary logo" className="h-12" />
-                <div>
-                    <span className="text-black">My</span>
-                    <span className="text-secondary">Tinerary</span>
+            <Link to="/">
+                <div className="btn btn-ghost normal-case text-xl">
+                    <img src={logo} alt="MyTinerary logo" className="h-12" />
+                    <div>
+                        <span className="text-black">My</span>
+                        <span className="text-secondary">Tinerary</span>
+                    </div>
                 </div>
-            </a>
+            </Link>
         </div>
     );
 };
@@ -97,7 +108,7 @@ const ProfileMenu = ({ isLoggedIn, handleLogoutClick, handleLoginClick, isScroll
         return (
             <div className="navbar-end">
                 <button className={
-                    `btn btn-ghost font-bold ${isScrolled ? 'text-black' : 'text-white'}` }onClick={handleLoginClick}>
+                    `btn btn-ghost font-bold ${isScrolled ? 'text-black' : 'text-white'}`} onClick={handleLoginClick}>
                     Login
                 </button>
             </div>

@@ -1,5 +1,6 @@
 import React from 'react';
 import logo from '../assets/logo.png';
+import { Link } from 'react-router-dom';
 
 function Footer() {
     return (
@@ -23,12 +24,16 @@ function Footer() {
             </div>
             <div className="flex flex-col mb-6">
                 <h2 className="font-semibold">Navigation</h2>
-                <a href="/" className="link link-hover">
-                    Home
-                </a>
-                <a href="/cities" className="link link-hover">
-                    Cities
-                </a>
+                <Link to="/">
+                    <div className="link link-hover">
+                        Home
+                    </div>
+                </Link>
+                <Link to="/cities">
+                    <div className="link link-hover">
+                        Cities
+                    </div>
+                </Link>
             </div>
             <div className="flex flex-col">
                 <h2 className="font-semibold">Contact us</h2>

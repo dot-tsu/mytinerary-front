@@ -1,6 +1,7 @@
 import React from 'react'
 import originalImage from '../assets/originalbg.jpg';
 import cuttedImage from '../assets/cuttedbg.png';
+import { Link } from 'react-router-dom'
 
 function Home() {
     return (
@@ -33,9 +34,11 @@ function Home() {
                 <p className="text-sm xl:text-xl font-thin md:mx-10">
                     Find your perfect trip, designed by insiders who know and love their cities.
                 </p>
-                <button className="btn btn-outline border-white text-white md:btn-wide">
-                    Get Started
-                </button>
+                <Link to="/cities">
+                    <button className="btn btn-outline border-white text-white md:btn-wide">
+                        Get Started
+                    </button>
+                </Link>
             </div>
 
             {/* Person Cutout */}
