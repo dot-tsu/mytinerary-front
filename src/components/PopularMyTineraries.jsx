@@ -19,7 +19,7 @@ const Carousel = ({ currentSlide, setCurrentSlide }) => {
             <div className="h-fit justify-center align-middle grid grid-cols-1 sm:grid-cols-2 gap-2 md:gap-4">
                 {data.slice(currentSlide * imagesPerSlide, (currentSlide + 1) * imagesPerSlide).map((item, index) => {
                     return (
-                        <a key={index} className="cursor-pointer relative group">
+                        <a key={indexNum} className="cursor-pointer relative group">
                             <img
                                 src={item.image_url}
                                 alt={`Slide${currentSlide + 1}-Image${item.id}`}
