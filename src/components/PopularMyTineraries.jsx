@@ -1,9 +1,11 @@
 import { useState, useEffect } from 'react';
 import data from '../data/data.json';
 
+const filteredData = data.filter(item => item.isPopular); // Only popular cities
+
 const Carousel = ({ currentSlide, setCurrentSlide }) => {
     const imagesPerSlide = 4;
-    const totalSlides = Math.ceil(data.length / imagesPerSlide);
+    const totalSlides = Math.ceil(filteredData.length / imagesPerSlide);
 
     const autoChangeSlide = () => {
         setCurrentSlide((currentSlideIndex) => (currentSlideIndex < totalSlides - 1 ? currentSlideIndex + 1 : 0));
@@ -16,13 +18,15 @@ const Carousel = ({ currentSlide, setCurrentSlide }) => {
 
     return (
         <div className="relative">
-            <div className="h-fit justify-center align-middle grid grid-cols-1 sm:grid-cols-2 gap-2 md:gap-4">
-                {data.slice(currentSlide * imagesPerSlide, (currentSlide + 1) * imagesPerSlide).map((item, index) => {
+        <div className="h-fit justify-center align-middle grid grid-cols-1 sm:grid-cols-2 gap-2 md:gap-4">
+            {filteredData
+                .slice(currentSlide * imagesPerSlide, (currentSlide + 1) * imagesPerSlide)
+                .map((item, index) => {
                     return (
                         <a key={index} className="cursor-pointer relative group">
                             <img
                                 src={item.image_url}
-                                alt={`Slide${currentSlide + 1}-Image${item.id}`}
+                                alt={item.city + ", " + item.country}
                                 className="w-full h-32 md:h-56 lg:h-64 object-cover rounded-md transition-all brightness-50 group-hover:brightness-100"
                             />
                             <div className="absolute bottom-0 left-0 p-2 text-white group-hover:opacity-0 transition-opacity">
@@ -42,14 +46,15 @@ const Carousel = ({ currentSlide, setCurrentSlide }) => {
                         </a>
                     );
                 })}
-            </div>
         </div>
+    </div>
     );
 };
 
+
 function PopularMyTineraries() {
     const [currentSlide, setCurrentSlide] = useState(0);
-    const totalSlides = Math.ceil(data.length / 4);
+    const totalSlides = Math.ceil(filteredData.length / 4);
 
     const prevSlide = () => {
         setCurrentSlide((currentSlideIndex) => (currentSlideIndex > 0 ? currentSlideIndex - 1 : totalSlides - 1));
