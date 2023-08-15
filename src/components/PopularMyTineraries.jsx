@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react';
-import data from '../data/data.json';
+import places from '../data/data.json';
 
-const filteredData = data.filter(item => item.isPopular); // Only popular cities
+const filteredPlaces = places.filter(place => place.isPopular); // Only popular cities
 
 const Carousel = ({ currentSlide, setCurrentSlide }) => {
     const imagesPerSlide = 4;
-    const totalSlides = Math.ceil(filteredData.length / imagesPerSlide);
+    const totalSlides = Math.ceil(filteredPlaces.length / imagesPerSlide);
 
     const autoChangeSlide = () => {
         setCurrentSlide((currentSlideIndex) => (currentSlideIndex < totalSlides - 1 ? currentSlideIndex + 1 : 0));
@@ -19,19 +19,19 @@ const Carousel = ({ currentSlide, setCurrentSlide }) => {
     return (
         <div className="relative">
         <div className="h-fit justify-center align-middle grid grid-cols-1 sm:grid-cols-2 gap-2 md:gap-4">
-            {filteredData
+            {filteredPlaces
                 .slice(currentSlide * imagesPerSlide, (currentSlide + 1) * imagesPerSlide)
-                .map((item, index) => {
+                .map((place, index) => {
                     return (
                         <a key={index} className="cursor-pointer relative group">
                             <img
-                                src={item.image_url}
-                                alt={item.city + ", " + item.country}
+                                src={place.image_url}
+                                alt={place.city + ", " + place.country}
                                 className="w-full h-32 md:h-56 lg:h-64 object-cover rounded-md transition-all brightness-50 group-hover:brightness-100"
                             />
                             <div className="absolute bottom-0 left-0 p-2 text-white group-hover:opacity-0 transition-opacity">
-                                <h3 className="text-lg md:text-2xl font-semibold">{item.city}</h3>
-                                <div className='flex items-center'>
+                                <h3 className="text-lg md:text-2xl font-semibold">{place.city}</h3>
+                                <div className='flex places-center'>
                                     <svg className="h-4" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
                                         <g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g>
@@ -40,7 +40,7 @@ const Carousel = ({ currentSlide, setCurrentSlide }) => {
                                             <path d="M12 12C13.1046 12 14 11.1046 14 10C14 8.89543 13.1046 8 12 8C10.8954 8 10 8.89543 10 10C10 11.1046 10.8954 12 12 12Z" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"></path>
                                         </g>
                                     </svg>
-                                    <h4 className="text-xs md:text-sm">{item.country}</h4>
+                                    <h4 className="text-xs md:text-sm">{place.country}</h4>
                                 </div>
                             </div>
                         </a>
@@ -54,7 +54,7 @@ const Carousel = ({ currentSlide, setCurrentSlide }) => {
 
 function PopularMyTineraries() {
     const [currentSlide, setCurrentSlide] = useState(0);
-    const totalSlides = Math.ceil(filteredData.length / 4);
+    const totalSlides = Math.ceil(filteredPlaces.length / 4);
 
     const prevSlide = () => {
         setCurrentSlide((currentSlideIndex) => (currentSlideIndex > 0 ? currentSlideIndex - 1 : totalSlides - 1));
@@ -73,7 +73,7 @@ function PopularMyTineraries() {
                     <div className='m-3'>
                         <div className='grid grid-cols-3'>
                             <h2 className='card-title mx-5 col-span-2 flex font-light text-secondary text-sm md:text-2xl'>Popular MyTineraries</h2>
-                            <div className='col-span-1 flex justify-end items-center gap-2 m-2'>
+                            <div className='col-span-1 flex justify-end places-center gap-2 m-2'>
                                 <button className="btn btn-sm btn-ghost btn-circle" onClick={prevSlide}>
                                     <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" strokeWidth="0"></g><g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M14.071 5L7.70708 11.364C7.31656 11.7545 7.31656 12.3877 7.70708 12.7782L14.071 19.1421" stroke="#000000" strokeLinecap="round"></path> </g></svg>
                                 </button>
