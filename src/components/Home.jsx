@@ -35,7 +35,7 @@ function Home() {
                     Find your perfect trip, designed by insiders who know and love their cities.
                 </p>
                 <Link to="/cities">
-                    <button className="btn btn-outline border-white text-white md:btn-wide">
+                    <button className="btn bg-transparent border-white text-white md:btn-wide hover:bg-accent hover:border-accent">
                         Get Started
                     </button>
                 </Link>
