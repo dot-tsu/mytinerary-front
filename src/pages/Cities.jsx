@@ -1,12 +1,34 @@
-import React from 'react';
+import React, { useState, useEffect }from 'react';
 import places from '../data/data.json';
 
 function Cities() {
+    const [currentImageIndex, setCurrentImageIndex] = useState(0);
+    const [isChanging, setIsChanging]  = useState(false);
+    const [timeoutId, setTimeoutId] = useState(null);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setIsChanging(true);
+            const id = setTimeout(() => {
+                setCurrentImageIndex((prevIndex) => (prevIndex + 1) % places.length);
+                setIsChanging(false);
+            }, 300);
+            setTimeoutId(id);
+        }, 8000); // 8 seconds
+        
+        return () => {
+            clearInterval(interval);
+            if (timeoutId) {
+                clearTimeout(timeoutId);
+            }
+        };
+    }, [timeoutId]);
+
     return (
         <>
             <section id="cities" className='min-h-screen'>
-                <div className='relative flex flex-col justify-center items-center min-h-[40vh] bg-cover' style={{ backgroundImage: "url('https://images.unsplash.com/photo-1616039407041-5ce631b57879?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80')" }}>
-                    <div className='absolute inset-0 bg-black opacity-50'></div>
+                <div className="relative flex flex-col justify-center items-center min-h-[40vh] bg-cover bg-center" style={{ backgroundImage: `url('${places[currentImageIndex].image_url}')` }}>
+                    <div className={`absolute inset-0 bg-black transition-opacity duration-300 ${isChanging ? "opacity-75" : "opacity-50"}`}></div>
                     <h1 className='text-white text-4xl font-bold relative z-10'>Cities</h1>
                     <h3 className='text-white md:text-xl font-light m-3 relative z-10'>
                         <span className='font-bold'>Explore</span> the world and discover the best places to visit.
