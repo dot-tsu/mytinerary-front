@@ -2,16 +2,21 @@ import React from 'react';
 import logo from '../assets/logo.png';
 import { Link } from 'react-router-dom';
 
-function Footer() {
+const Footer = () => {
     return (
         <footer className="footer p-10 text-base bg-base-100">
             <div className="flex flex-col items-center mb-6">
                 <img src={logo} alt="Joyamate logo" className="h-[100px]" />
-                <p className="mx-auto font-bold">2023 © | MyTinerary. All rights reserved.</p>
+                <p className="mx-auto font-bold">&copy; 2023 MyTinerary. All rights reserved.</p>
                 <p className="mx-auto">
                     Web app and design made with ❤ by&nbsp;
-                    <a href="https://www.linkedin.com/in/luca-di-marco/" className="link link-hover" target="_blank" rel="noopener noreferrer">
-                        tsu
+                    <a
+                        href="https://www.linkedin.com/in/luca-di-marco/"
+                        className="link link-hover"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Luca Di Marco
                     </a>
                 </p>
             </div>
@@ -24,31 +29,42 @@ function Footer() {
             </div>
             <div className="flex flex-col mb-6">
                 <h2 className="font-semibold">Navigation</h2>
-                <Link to="/">
-                    <div className="link link-hover">
-                        Home
-                    </div>
+                <Link to="/" className="link link-hover">
+                    Home
                 </Link>
-                <Link to="/cities">
-                    <div className="link link-hover">
-                        Cities
-                    </div>
+                <Link to="/cities" className="link link-hover">
+                    Cities
                 </Link>
             </div>
             <div className="flex flex-col">
                 <h2 className="font-semibold">Contact us</h2>
-                <a href="https://www.instagram.com/mytineraryfakeinsta" className="link link-hover" target="_blank" rel="noopener noreferrer">
+                <a
+                    href="https://www.instagram.com/mytineraryfakeinsta"
+                    className="link link-hover"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
                     Instagram: @mytineraryfakeinsta
                 </a>
-                <a href="mailto:mytinerary@fakemail.com" className="link link-hover" target="_blank" rel="noopener noreferrer">
+                <a
+                    href="mailto:mytinerary@fakemail.com"
+                    className="link link-hover"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
                     Email: mytinerary@fakemail.com
                 </a>
-                <a href="https://api.whatsapp.com/send?phone=1234567891011" className="link link-hover" target="_blank" rel="noopener noreferrer">
+                <a
+                    href="https://api.whatsapp.com/send?phone=1234567891011"
+                    className="link link-hover"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
                     WhatsApp: +12 (3) 456 789-1011
                 </a>
             </div>
         </footer>
     );
-}
+};
 
 export default Footer;
