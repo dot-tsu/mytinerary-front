@@ -1,7 +1,7 @@
 import React, { useState, useEffect }from 'react';
 import places from '../data/data.json';
 
-function Cities() {
+const Cities = () => {
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
     const [isChanging, setIsChanging]  = useState(false);
     const [timeoutId, setTimeoutId] = useState(null);
