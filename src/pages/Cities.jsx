@@ -8,7 +8,7 @@ const Cities = () => {
     const [places, setPlaces] = useState([])
 
     useEffect(() => {
-
+        console.log(places);
         const fetchData = async () => {
             try {
                 const response = await axios.get('https://mytinerary-deploy.onrender.com/api/places');
@@ -20,14 +20,19 @@ const Cities = () => {
 
         fetchData()
 
+    }, []);
+
+    useEffect(() => {
+
         const interval = setInterval(() => {
             setIsChanging(true);
             const id = setTimeout(() => {
                 setCurrentImageIndex((prevIndex) => (prevIndex + 1) % places.length);
+                console.log();
                 setIsChanging(false);
             }, 300);
             setTimeoutId(id);
-        }, 8000); // 8 seconds
+        }, 7000); // 7 seconds
 
         return () => {
             clearInterval(interval);
@@ -40,7 +45,7 @@ const Cities = () => {
     return (
         <>
             <section id="cities" className='min-h-screen'>
-            <div className="relative flex flex-col justify-center items-center min-h-[40vh] bg-cover bg-center" style={{ backgroundImage: places.length > 0 ? `url('${places[currentImageIndex].image_url}')` : '' }}>
+                <div className="relative flex flex-col justify-center items-center min-h-[40vh] bg-cover bg-center" style={{ backgroundImage: places.length === 0 ? "" : `url('${places[currentImageIndex].image_url}')` }}>
                     <div className={`absolute inset-0 bg-black transition-opacity duration-300 ${isChanging ? "opacity-75" : "opacity-50"}`}></div>
                     <h1 className='text-white text-5xl md:text-7xl font-bold relative z-10'>Cities</h1>
                     <h3 className='text-white md:text-xl font-light m-3 relative z-10'>
@@ -56,7 +61,7 @@ const Cities = () => {
                             <p>Loading...</p>
                         ) : (
                             places.map((place) => (
-                                <div key={place.id} className='m-4'>
+                                <div key={place._id} className='m-4'>
                                     <a className="relative group">
                                         <img
                                             src={place.image_url}
