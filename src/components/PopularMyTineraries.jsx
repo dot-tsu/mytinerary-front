@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import places from '../data/data.json';
 
 const filteredPlaces = places.filter(place => place.isPopular); // Only popular cities
@@ -51,17 +51,16 @@ const Carousel = ({ currentSlide, setCurrentSlide }) => {
     );
 };
 
-
-function PopularMyTineraries() {
+const PopularMyTineraries = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
     const totalSlides = Math.ceil(filteredPlaces.length / 4);
 
     const prevSlide = () => {
-        setCurrentSlide((currentSlideIndex) => (currentSlideIndex > 0 ? currentSlideIndex - 1 : totalSlides - 1));
+        setCurrentSlide(currentSlideIndex => (currentSlideIndex > 0 ? currentSlideIndex - 1 : totalSlides - 1));
     };
 
     const nextSlide = () => {
-        setCurrentSlide((currentSlideIndex) => (currentSlideIndex < totalSlides - 1 ? currentSlideIndex + 1 : 0));
+        setCurrentSlide(currentSlideIndex => (currentSlideIndex < totalSlides - 1 ? currentSlideIndex + 1 : 0));
     };
 
     return (
