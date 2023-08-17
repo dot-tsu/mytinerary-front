@@ -29,9 +29,9 @@ const Cities = () => {
             <section id="cities" className='min-h-screen'>
                 <div className="relative flex flex-col justify-center items-center min-h-[40vh] bg-cover bg-center" style={{ backgroundImage: `url('${places[currentImageIndex].image_url}')` }}>
                     <div className={`absolute inset-0 bg-black transition-opacity duration-300 ${isChanging ? "opacity-75" : "opacity-50"}`}></div>
-                    <h1 className='text-white text-4xl font-bold relative z-10'>Cities</h1>
+                    <h1 className='text-white text-5xl md:text-7xl font-bold relative z-10'>Cities</h1>
                     <h3 className='text-white md:text-xl font-light m-3 relative z-10'>
-                        <span className='font-bold'>Explore</span> the world and discover the best places to visit.
+                        <span className='font-bold text-accent'>Explore</span> the world and discover the best places to visit.
                     </h3>
                 </div>
                 <div className='min-h-[60vh] bg-gradient-to-b from-base-300 to-base-100 pb-20'>
