@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-
+import { Link } from 'react-router-dom';
 
 const Carousel = ({ currentSlide, setCurrentSlide, filteredPlaces }) => {
     const imagesPerSlide = 4;
@@ -23,9 +23,10 @@ const Carousel = ({ currentSlide, setCurrentSlide, filteredPlaces }) => {
                 ) : (
                     filteredPlaces
                         .slice(currentSlide * imagesPerSlide, (currentSlide + 1) * imagesPerSlide)
-                        .map((place, index) => {
+                        .map((place) => {
                             return (
-                                <a key={index} className="cursor-pointer relative group">
+                                <Link to={`/cities/${place._id}`} key={place._id}>
+                                <div className="relative group">
                                     <img
                                         src={place.image_url}
                                         alt={place.city + ", " + place.country}
@@ -45,7 +46,8 @@ const Carousel = ({ currentSlide, setCurrentSlide, filteredPlaces }) => {
                                             <h4 className="text-xs md:text-sm">{place.country}</h4>
                                         </div>
                                     </div>
-                                </a>
+                                </div>
+                                </Link>
                             );
                         })
                 )}

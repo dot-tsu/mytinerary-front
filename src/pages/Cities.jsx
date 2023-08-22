@@ -39,7 +39,7 @@ const Cities = () => {
             <p>No places found</p>
           ) : (
             places.map((place) => (
-              <PlaceCard key={place._id} place={place} />
+                <PlaceCard place={place} key={place._id}/>
             ))
           )}
         </div>

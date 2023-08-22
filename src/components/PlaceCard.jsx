@@ -1,9 +1,10 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
 const PlaceCard = ({ place }) => (
+    
     <div className='m-8 shadow-xl shadow-gray-500'>
         <div key={place._id}>
-            <a className="relative group">
+            <div className="relative group">
                 <img
                     src={place.image_url}
                     alt={place.city + ", " + place.country}
@@ -29,9 +30,11 @@ const PlaceCard = ({ place }) => (
                     </div>
                 ) : null}
                 <div className="absolute bottom-0 left-0 p-2 text-white">
+                <Link to={`/cities/${place._id}`} key={place._id}>
                     <button className='btn text-white btn-outline btn-md btn-rounded'>View More</button>
+                    </Link>
                 </div>
-            </a>
+            </div>
         </div>
     </div>
 );
