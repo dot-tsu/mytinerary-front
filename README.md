@@ -1,45 +1,36 @@
-# MyTinerary - Sprint 1
+# MyTinerary Frontend - Sprint 2
 
-Welcome to MyTinerary! This bootcamp project is aimed at providing an intuitive, agile, and accessible user experience for travelers looking to find their perfect trip, designed by insiders who know and love their cities. This README.md file contains information about the accomplishments and minimum requirements achieved during Sprint 1 of the development process.
+Welcome to MyTinerary! This bootcamp project is aimed at providing an intuitive, agile, and accessible user experience for travelers looking to find their perfect trip, designed by insiders who know and love their cities. This README.md file contains information about the goals and minimum requirements set for Sprint 2 of the development process.
 
-## MVC for Sprint 1
+## MVC for Sprint 2
 
-### Minimum Requirements
+### Sprint 2 Goals
 
-The following features were implemented during Sprint 1:
+The primary focus of Sprint 2 is to develop the Cities component and enhance the overall user experience. The following features and tasks are planned for this sprint:
 
-1. Home Page - Responsive and Intuitive UI:
+1. Cities Component Development:
 
-    - The MyTinerary home page is fully responsive and provides an intuitive user experience at all resolutions.
-    - The header contains a side menu with options, including an optional logo and application name.
-    - The header includes a fake login button, when clicked logs in.
-    - The header includes a generic user image, indicating that no one is logged in.
-    - The links and image in the header do not lead anywhere or perform any action, except for the "Cities" link.
-    - The "Cities" link is functional and redirects the user to an empty page.
+    - Implement the frontend component for displaying cities.
+    - Dynamically fetch city data from the API to populate the list.
+    - Incorporate an input field that allows users to filter cities based on their preferences.
+    - The filtering should consider case-insensitive search and handle leading/trailing spaces.
+    - Display a friendly message when no cities match the search criteria.
+    - Enable clicking on a city to navigate to a detailed view.
 
-2. Hero/Welcome Section:
+2. City Detailed View:
 
-    - The hero/welcome section displays the name of the MyTinerary app and the slogan: "Find your perfect trip, designed by insiders who know and love their cities!"
-    
+    - Create a reusable component for displaying detailed information about a city.
+    - Show the city's name and photo at the top.
+    - Provide a "Under Construction" section for future itineraries and activities.
 
-3. Call to Action:
+3. Backend Setup:
 
-    - The home page includes an eye-catching call to action, inviting users to click and access the "Cities" page.
-    - The call to action is visually complemented with images and animations to make it attractive and engaging.
-
-4. Carousel:
-
-    - A carousel has been implemented on the home page, displaying slides that change automatically.
-    - The carousel contains the title "Popular Mytineraries" and three slides, each containing four photos of different cities in the world.
-    - The carousel is dynamic, with the rendering of slides and photos generated programmatically (not hardcoded).
-    - Each photo in the carousel corresponds to a city in the world, and the city's name is indicated on the photo.
-    - The information about the cities and their photos are harcoded in a data.json as there is no database yet.
-
-5. Footer:
-
-    - The footer recaps the information about the site.
-    - It contains another navigation menu to ease user navigation.
-    - Additional information such as address, social networks, and a map can be found in the footer, as per the design.
+    - Develop the server to handle API requests.
+    - Set up a database to store city information.
+    - Create a "cities" collection in the database.
+    - Design the City model with properties such as name, photo link, and country.
+    - Implement routes and controllers for loading, getting all, getting by ID, modifying, and deleting cities.
+    - Ensure the backend is functional for interactions with tools like Insomnia/Postman.
 
 ## Design
 
@@ -47,4 +38,4 @@ The design for this sprint has been created 100% by me.
 
 ## Information
 
-This was a work practice project for MindHub MERN bootcamp
+This project is part of the MindHub MERN bootcamp and serves as a valuable work practice opportunity.

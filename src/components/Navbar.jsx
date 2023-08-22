@@ -41,13 +41,13 @@ const DesktopMenu = ({ isScrolled }) => {
         <div className="navbar-start hidden lg:flex">
             <div className="flex-none gap-2">
                 <ul className={`menu menu-horizontal px-1 text-lg ${isScrolled ? 'text-black' : 'text-white'}`}>
-                    <li>
-                        <Link to="/">
+                    <li className=''>
+                        <Link to="/" className='hover:text-secondary'>
                             Home
                         </Link>
                     </li>
                     <li>
-                        <Link to="/cities">
+                        <Link to="/cities" className='hover:text-secondary'>
                             Cities
                         </Link>
                     </li>

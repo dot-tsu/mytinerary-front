@@ -3,6 +3,7 @@ import MainLayout from "./layouts/MainLayout"
 import Cities from "./pages/Cities"
 import Homepage from "./pages/Homepage"
 import PageNotFound from "./pages/PageNotFound"
+import Details from "./pages/Details"
 
 const router = createHashRouter([
   {
@@ -11,7 +12,8 @@ const router = createHashRouter([
     errorElement: <PageNotFound />,
     children: [
       { path: "/", element: <Homepage /> },
-      { path: "/cities", element: <Cities /> }
+      { path: "/cities", element: <Cities /> },
+      { path: '/cities/:placeId', element: <Details /> }
     ]
   }
 ])
