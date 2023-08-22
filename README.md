@@ -1,4 +1,4 @@
-# MyTinerary - Sprint 2
+# MyTinerary Frontend - Sprint 2
 
 Welcome to MyTinerary! This bootcamp project is aimed at providing an intuitive, agile, and accessible user experience for travelers looking to find their perfect trip, designed by insiders who know and love their cities. This README.md file contains information about the goals and minimum requirements set for Sprint 2 of the development process.
 
