@@ -1,13 +1,13 @@
 import React from 'react';
 
 const PlaceCard = ({ place }) => (
-    <div className='m-4'>
-        <div key={place._id} className='m-4'>
+    <div className='m-8 shadow-xl shadow-gray-500'>
+        <div key={place._id}>
             <a className="relative group">
                 <img
                     src={place.image_url}
                     alt={place.city + ", " + place.country}
-                    className="h-60 w-80 md:h-80 md:w-[30rem] object-cover rounded-md transition-all brightness-50 group-hover:brightness-100"
+                    className="h-60 w-80 md:h-80 md:w-[30rem] object-cover transition-all brightness-50 group-hover:brightness-100 rounded-sm"
                 />
                 <div className="absolute top-0 left-0 p-2 text-white">
                     <h3 className="text-lg md:text-2xl font-semibold">{place.city}</h3>
