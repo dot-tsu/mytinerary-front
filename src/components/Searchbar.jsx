@@ -1,7 +1,7 @@
 import React from 'react';
 
 const SearchBar = ({ searchQuery, onSearchQueryChange, fetchData }) => (
-    <label className="flex">
+    <label className="flex shadow-lg">
         <input
             type="text"
             placeholder="Search your city"
