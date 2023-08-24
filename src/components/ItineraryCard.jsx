@@ -9,7 +9,7 @@ const ItineraryCard = ({ itinerary }) => {
     }
 
     return (
-        <div className="card card-compact md:w-1/2 bg-white shadow-xl">
+        <div className="card card-compac bg-white shadow-xl">
             <div className="card-body">
                 <div className="grid grid-cols-3">
                     <div className="col-span-2">
@@ -26,7 +26,7 @@ const ItineraryCard = ({ itinerary }) => {
                         </div>
                     </div>
                     <div className='col-span-2'>
-                        <div className="text-gray-500 flex mt-2">
+                        <div className="text-gray-500 flex flex-wrap mt-2">
                             {itinerary.hashtags.map((hashtag, index) => (
                                 <p key={index}>#{hashtag}</p>
                             ))}
@@ -54,25 +54,28 @@ const ItineraryCard = ({ itinerary }) => {
                         </label>
                         <label className='swap'>
                             <input type="checkbox" />
-                            <svg viewBox="0 0 24 24" className='h-8 swap-on' fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g clip-path="url(#clip0_429_11246)"> <path d="M19.0711 13.1421L13.4142 18.799C12.6332 19.58 11.3668 19.58 10.5858 18.799L4.92893 13.1421C2.97631 11.1895 2.97631 8.02369 4.92893 6.07107C6.88155 4.11845 10.0474 4.11845 12 6.07107C13.9526 4.11845 17.1184 4.11845 19.0711 6.07107C21.0237 8.02369 21.0237 11.1895 19.0711 13.1421Z" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path> </g> <defs> <clipPath id="clip0_429_11246"> <rect width="24" height="24" fill="white"></rect> </clipPath> </defs> </g></svg>
-                            <svg viewBox="0 0 24 24" className='h-8 swap-off fill-primary' fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g clip-path="url(#clip0_429_11246)"> <path d="M19.0711 13.1421L13.4142 18.799C12.6332 19.58 11.3668 19.58 10.5858 18.799L4.92893 13.1421C2.97631 11.1895 2.97631 8.02369 4.92893 6.07107C6.88155 4.11845 10.0474 4.11845 12 6.07107C13.9526 4.11845 17.1184 4.11845 19.0711 6.07107C21.0237 8.02369 21.0237 11.1895 19.0711 13.1421Z" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path> </g> <defs> <clipPath id="clip0_429_11246"> <rect width="24" height="24" fill="white"></rect> </clipPath> </defs> </g></svg>
+                            <svg viewBox="0 0 24 24" className='h-8 swap-off' fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g clip-path="url(#clip0_429_11246)"> <path d="M19.0711 13.1421L13.4142 18.799C12.6332 19.58 11.3668 19.58 10.5858 18.799L4.92893 13.1421C2.97631 11.1895 2.97631 8.02369 4.92893 6.07107C6.88155 4.11845 10.0474 4.11845 12 6.07107C13.9526 4.11845 17.1184 4.11845 19.0711 6.07107C21.0237 8.02369 21.0237 11.1895 19.0711 13.1421Z" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path> </g> <defs> <clipPath id="clip0_429_11246"> <rect width="24" height="24" fill="white"></rect> </clipPath> </defs> </g></svg>
+                            <svg viewBox="0 0 24 24" className='h-8 swap-on fill-primary' fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g clip-path="url(#clip0_429_11246)"> <path d="M19.0711 13.1421L13.4142 18.799C12.6332 19.58 11.3668 19.58 10.5858 18.799L4.92893 13.1421C2.97631 11.1895 2.97631 8.02369 4.92893 6.07107C6.88155 4.11845 10.0474 4.11845 12 6.07107C13.9526 4.11845 17.1184 4.11845 19.0711 6.07107C21.0237 8.02369 21.0237 11.1895 19.0711 13.1421Z" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path> </g> <defs> <clipPath id="clip0_429_11246"> <rect width="24" height="24" fill="white"></rect> </clipPath> </defs> </g></svg>
                         </label>
                     </div>
-                        <div className={`col-span-3 bg-base-100  rounded-md m-3 shadow-inner overflow-hidden ${showComments ? 'p-4 opacity-100 max-h-[100rem]' : 'max-h-0 opacity-0'} transition-all duration-500`}>
-                            {itinerary.comments.map((comment, index) => (
-                                <div className="chat chat-start"  key={index}>
-                                <div className="chat-image avatar">
-                                    <div className="w-10 rounded-full">
-                                        <img src="https://www.hardiagedcare.com.au/wp-content/uploads/2019/02/default-avatar-profile-icon-vector-18942381.jpg" />
+                    <div className={`col-span-3 bg-base-100 rounded-md m-3 shadow-inner overflow-hidden ${showComments ? 'p-4 opacity-100 max-h-[100rem]' : 'max-h-0 opacity-0'} transition-all duration-500`}>
+                        {itinerary.comments.length === 0 ? (
+                            <p className="text-gray-500 text-center">No comments yet.</p>
+                        ) : (
+                            itinerary.comments.map((comment, index) => (
+                                <div className="chat chat-start" key={index}>
+                                    <div className="chat-image avatar">
+                                        <div className="w-10 rounded-full">
+                                            <img src="https://www.hardiagedcare.com.au/wp-content/uploads/2019/02/default-avatar-profile-icon-vector-18942381.jpg" alt="User Avatar" />
+                                        </div>
                                     </div>
+                                    <div className="chat-header">Anonymous</div>
+                                    <div className="chat-bubble">{comment}</div>
                                 </div>
-                                <div className="chat-header">
-                                    Anonymous
-                                </div>
-                                <div className="chat-bubble">{comment}</div>
-                            </div>
-                            ))}
-                        </div>
+                            ))
+                        )}
+                    </div>
+
                 </div>
                 <div className="divider -mt-1"></div>
             </div>
