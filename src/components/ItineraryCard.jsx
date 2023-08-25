@@ -14,7 +14,7 @@ const ItineraryCard = ({ itinerary }) => {
                 <div className="grid grid-cols-3">
                     <div className="col-span-2">
                         <h2 className="card-title text-xl">{itinerary.name}</h2>
-                        <p className="text-gray-500 font-light">by {itinerary.user.name}</p>
+                        <p className="text-gray-500 font-light">by {itinerary.user.name} - {itinerary.duration} hours</p>
                     </div>
                     <div className="avatar place-self-end object-center">
                         <div className="w-12 h-12 rounded-full overflow-hidden">
@@ -78,6 +78,9 @@ const ItineraryCard = ({ itinerary }) => {
 
                 </div>
                 <div className="divider -mt-1"></div>
+                <div>
+                    <button className='btn btn-primary'>View more</button>
+                </div>
             </div>
         </div>
     );
