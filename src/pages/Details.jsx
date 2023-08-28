@@ -1,36 +1,22 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import axios from 'axios';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchPlaceDetails, fetchItineraries } from '../redux/placesSlice';
+
 import ItineraryCard from '../components/ItineraryCard';
 
 
 const Details = () => {
   const { placeId } = useParams();
-  const [placeDetails, setPlaceDetails] = useState(null);
-  const [itineraries, setItineraries] = useState([]);
+  const dispatch = useDispatch(); 
 
-  const fetchPlaceDetails = async () => {
-    try {
-      const response = await axios.get(`https://mytinerary-deploy.onrender.com/api/places/${placeId}`);
-      setPlaceDetails(response.data);
-    } catch (error) {
-      console.error('Error fetching place details:', error);
-    }
-  };
-
-  const fetchItineraries = async () => {
-    try {
-      const response = await axios.get(`https://mytinerary-deploy.onrender.com/api/itineraries/place/${placeId}`);
-      setItineraries(response.data);
-    } catch (error) {
-      console.error('Error fetching itineraries:', error);
-    }
-  };
+  const placeDetails = useSelector(state => state.places.placeDetails);
+  const itineraries = useSelector(state => state.places.itineraries);
 
   useEffect(() => {
-    fetchPlaceDetails();
-    fetchItineraries();
-  }, [placeId]);
+    dispatch(fetchPlaceDetails(placeId));
+    dispatch(fetchItineraries(placeId));
+  }, [dispatch, placeId]);
 
   if (!placeDetails) {
     return <p>Loading...</p>;
@@ -45,7 +31,7 @@ const Details = () => {
               <div>
                 <img src={placeDetails.image_url} alt={placeDetails.city} className='h-[60vh] w-full object-cover' />
                 <div className='absolute indicator bg-white py-5 px-10 -mt-24 ml-10 rounded-md shadow-xl'>
-                  {placeDetails.isPopular ? (<span class="indicator-item badge badge-secondary">Popular</span>) : null}
+                  {placeDetails.isPopular ? (<span className="indicator-item badge badge-secondary">Popular</span>) : null}
                   <div>
                     <h2 className='text-5xl font-semibold'>{placeDetails.city}</h2>
                     <h3 className='text-3xl font-light'>{placeDetails.country}</h3>

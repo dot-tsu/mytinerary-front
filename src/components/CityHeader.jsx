@@ -1,23 +1,18 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import { useSelector, useDispatch} from 'react-redux'
+import { fetchHeaderData} from '../redux/placesSlice'
 
 const CityHeader = () => {
+  const dispatch = useDispatch(); 
+
+  const headerPlaces = useSelector(state => state.places.headerPlaces);
+
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isChanging, setIsChanging] = useState(false);
-  const [headerPlaces, setHeaderPlaces] = useState([]);
-
-  const fetchHeaderData = async () => {
-    try {
-      const response = await axios.get('https://mytinerary-deploy.onrender.com/api/places');
-      setHeaderPlaces(response.data); 
-    } catch (error) {
-      console.error('Error fetching header data:', error);
-    }
-  };
 
   useEffect(() => {
-    fetchHeaderData();
-  }, []);
+    dispatch(fetchHeaderData());
+  }, [dispatch]);
 
   useEffect(() => {
     const interval = setInterval(() => {
