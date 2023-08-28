@@ -25,6 +25,15 @@ const ItineraryCard = ({ itinerary }) => {
                             />
                         </div>
                     </div>
+                    <div className='col-span-3 m-4 justify-self-center'>
+                        <button className='btn btn-ghost  '> 
+                        View Itinerary
+                        <svg viewBox="0 0 24 24"  className='w-10 h-10' fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g id="Arrow / Caret_Down_MD"> <path id="Vector" d="M16 10L12 14L8 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g> </g></svg>
+                        </button>
+                    </div>
+                </div>
+                <div className="divider -mt-1"></div>
+                <div className='grid grid-cols-3'>
                     <div className='col-span-2'>
                         <div className="text-gray-500 flex flex-wrap mt-2">
                             {itinerary.hashtags.map((hashtag, index) => (
@@ -75,11 +84,6 @@ const ItineraryCard = ({ itinerary }) => {
                             ))
                         )}
                     </div>
-
-                </div>
-                <div className="divider -mt-1"></div>
-                <div>
-                    <button className='btn btn-primary'>View more</button>
                 </div>
             </div>
         </div>
