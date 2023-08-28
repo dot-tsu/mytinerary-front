@@ -4,10 +4,11 @@ import { fetchPlaces } from '../redux/placesSlice';
 import CityHeader from '../components/CityHeader';
 import SearchBar from '../components/Searchbar';
 import PlaceCard from '../components/PlaceCard';
+import CardSkeleton from '../components/CardSkeleton'
 
 const Cities = () => {
   const dispatch = useDispatch();
-  const places = useSelector(state => state.places.places);
+  let places = useSelector(state => state.places.places);
 
   const [searchQuery, setSearchQuery] = useState('');
 
@@ -27,7 +28,13 @@ const Cities = () => {
       </div>
         <div className="flex flex-wrap justify-center items-center">
           {places.length === 0 ? (
-            <p>No places found</p>
+            <div className="flex flex-wrap justify-center items-center gap-16 my-8">
+            <CardSkeleton/>
+            <CardSkeleton/>
+            <CardSkeleton/>
+            <CardSkeleton/>
+            </div>
+            
           ) : (
             places.map((place) => (
                 <PlaceCard place={place} key={place._id}/>
