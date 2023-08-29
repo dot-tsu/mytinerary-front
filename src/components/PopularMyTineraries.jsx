@@ -1,23 +1,17 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import { useSelector, useDispatch } from 'react-redux';
+import { fetchHeaderData } from '../redux/placesSlice';
+
 import Carousel from './Carousel'
 
 const PopularMyTineraries = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
-    const [popularPlaces, setPopularPlaces] = useState([]);
+    const dispatch = useDispatch();
+    const popularPlaces = useSelector(state => state.places.headerPlaces.filter(place => place.isPopular));
 
     useEffect(() => {
-        const fetchPopularPlaces = async () => {
-            try {
-                const response = await axios.get('https://mytinerary-deploy.onrender.com/api/places');
-                const data = response.data.filter(place => place.isPopular);
-                setPopularPlaces(data);
-            } catch (error) {
-                console.error('Error fetching popular places:', error);
-            }
-        };
-        fetchPopularPlaces();
-    }, []);
+        dispatch(fetchHeaderData());
+    }, [dispatch]);
 
     const totalSlides = Math.ceil(popularPlaces.length / 4);
 
