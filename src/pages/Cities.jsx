@@ -26,15 +26,14 @@ const Cities = () => {
           onSearchQueryChange={(e) => setSearchQuery(e.target.value)}
         />
       </div>
-        <div className="flex flex-wrap justify-center items-center">
+        <div className="flex flex-wrap justify-center items-center gap-10 m-10">
           {places.length === 0 ? (
-            <div className="flex flex-wrap justify-center items-center gap-16 my-8">
+            <>
             <CardSkeleton/>
             <CardSkeleton/>
             <CardSkeleton/>
             <CardSkeleton/>
-            </div>
-            
+            </>
           ) : (
             places.map((place) => (
                 <PlaceCard place={place} key={place._id}/>
