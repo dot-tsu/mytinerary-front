@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 const PlaceCard = ({ place }) => (
     
-    <div className='m-8 shadow-xl shadow-gray-500'>
+    <div className='shadow-xl shadow-gray-500'>
         <div key={place._id}>
             <div className="relative group">
                 <img

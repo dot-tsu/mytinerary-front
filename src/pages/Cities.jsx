@@ -1,27 +1,20 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import { useSelector, useDispatch } from 'react-redux';
+import { fetchPlaces } from '../redux/placesSlice';
 import CityHeader from '../components/CityHeader';
 import SearchBar from '../components/Searchbar';
 import PlaceCard from '../components/PlaceCard';
+import CardSkeleton from '../components/CardSkeleton'
 
 const Cities = () => {
-  const [places, setPlaces] = useState([])
+  const dispatch = useDispatch();
+  let places = useSelector(state => state.places.places);
+
   const [searchQuery, setSearchQuery] = useState('');
 
-  const fetchData = async () => {
-    try {
-      const response = await axios.get('https://mytinerary-deploy.onrender.com/api/places', {
-        params: { query: searchQuery }
-      });
-      setPlaces(response.data);
-    } catch (error) {
-      console.error('Error fetching data:', error);
-    }
-  };
-
   useEffect(() => {
-    fetchData();
-  }, []);
+    dispatch(fetchPlaces(searchQuery));
+  }, [dispatch, searchQuery]);
 
   return (
     <section id="cities" className='min-h-screen'>
@@ -31,12 +24,16 @@ const Cities = () => {
         <SearchBar
           searchQuery={searchQuery}
           onSearchQueryChange={(e) => setSearchQuery(e.target.value)}
-          fetchData={fetchData}
         />
       </div>
-        <div className="flex flex-wrap justify-center items-center">
+        <div className="flex flex-wrap justify-center items-center gap-10 m-10">
           {places.length === 0 ? (
-            <p>No places found</p>
+            <>
+            <CardSkeleton/>
+            <CardSkeleton/>
+            <CardSkeleton/>
+            <CardSkeleton/>
+            </>
           ) : (
             places.map((place) => (
                 <PlaceCard place={place} key={place._id}/>
