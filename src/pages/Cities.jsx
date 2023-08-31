@@ -32,7 +32,6 @@ const Cities = () => {
             <CardSkeleton/>
             <CardSkeleton/>
             <CardSkeleton/>
-            <CardSkeleton/>
             </>
           ) : (
             places.map((place) => (
