@@ -2,25 +2,41 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
 export const fetchHeaderData = createAsyncThunk('places/fetchHeaderData', async () => {
-  const response = await axios.get('https://mytinerary-deploy.onrender.com/api/places');
-  return response.data;
+  try {
+    const response = await axios.get('https://mytinerary-deploy.onrender.com/api/places');
+    return response.data;
+  } catch (error) {
+    return [];
+  }
 });
 
 export const fetchPlaces = createAsyncThunk('places/fetchPlaces', async (searchQuery) => {
-  const response = await axios.get('https://mytinerary-deploy.onrender.com/api/places', {
-    params: { query: searchQuery }
-  });
-  return response.data;
+  try {
+    const response = await axios.get('https://mytinerary-deploy.onrender.com/api/places', {
+      params: { query: searchQuery }
+    });
+    return response.data;
+  } catch (error) {
+    return [];
+  }
 });
 
 export const fetchPlaceDetails = createAsyncThunk('places/fetchPlaceDetails', async (placeId) => {
-  const response = await axios.get(`https://mytinerary-deploy.onrender.com/api/places/${placeId}`);
-  return response.data;
+  try {
+    const response = await axios.get(`https://mytinerary-deploy.onrender.com/api/places/${placeId}`);
+    return response.data;
+  } catch (error) {
+    return [];
+  }
 });
 
 export const fetchItineraries = createAsyncThunk('places/fetchItineraries', async (placeId) => {
-  const response = await axios.get(`https://mytinerary-deploy.onrender.com/api/itineraries/place/${placeId}`);
-  return response.data;
+  try {
+    const response = await axios.get(`https://mytinerary-deploy.onrender.com/api/itineraries/place/${placeId}`);
+    return response.data;
+  } catch (error) {
+    return [];
+  }
 });
 
 const placesSlice = createSlice({
