@@ -18,7 +18,7 @@ const CityHeader = () => {
     const interval = setInterval(() => {
       setIsChanging(true);
       setTimeout(() => {
-        setCurrentImageIndex((prevIndex) => (prevIndex + 1) % headerPlaces.length);
+        setCurrentImageIndex(() => Math.floor(Math.random() * headerPlaces.length));
         setIsChanging(false);
       }, 300);
     }, 7000); // 7 seconds

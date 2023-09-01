@@ -38,7 +38,7 @@ const Details = () => {
                   </div>
                 </div>
               </div>
-              <div className='p-20'>
+              <div className='p-20 my-2'>
                 <p className='font-light text-lg md:text-2xl '>{placeDetails.description}</p>
               </div>
             </div>
@@ -52,7 +52,7 @@ const Details = () => {
           </div>
         </div>
       </section>
-      <section id='itineraries' className='py-12 px-8'>
+      <section id='itineraries' className='py-12 px-8 my-20'>
         <h2 className='text-center text-4xl font-bold'>My<span className='text-accent'>Tineraries</span></h2>
         <h3 className='text-center text-lg text-gray-600 mb-8'>Explore amazing itineraries created by users</h3>
         <div className='flex flex-col gap-4 lg:gap-12 justify-center xl:px-72'>
