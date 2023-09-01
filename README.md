@@ -1,36 +1,34 @@
-# MyTinerary Frontend - Sprint 2
+# MyTinerary Frontend - Sprint 3
 
-Welcome to MyTinerary! This bootcamp project is aimed at providing an intuitive, agile, and accessible user experience for travelers looking to find their perfect trip, designed by insiders who know and love their cities. This README.md file contains information about the goals and minimum requirements set for Sprint 2 of the development process.
+Welcome to MyTinerary! This README.md file provides an overview of the goals and minimum requirements set for Sprint 3 of the frontend development process. The focus in this sprint is to enhance the user experience by implementing new features related to city itineraries.
 
-## MVC for Sprint 2
+## MVC for Sprint 3
 
-### Sprint 2 Goals
+### Sprint 3 Goals
 
-The primary focus of Sprint 2 is to develop the Cities component and enhance the overall user experience. The following features and tasks are planned for this sprint:
+The primary focus of Sprint 3 is to further enhance the user experience by implementing city-specific itineraries. Below are the key features and tasks planned for this sprint:
 
-1. Cities Component Development:
+1. City Selection Enhancement:
 
-    - Implement the frontend component for displaying cities.
-    - Dynamically fetch city data from the API to populate the list.
-    - Incorporate an input field that allows users to filter cities based on their preferences.
-    - The filtering should consider case-insensitive search and handle leading/trailing spaces.
-    - Display a friendly message when no cities match the search criteria.
-    - Enable clicking on a city to navigate to a detailed view.
+    - Improve the city selection process.
+    - Ensure that clicking on a city in the "Cities" section correctly identifies the chosen city.
+    - Navigate to a detailed view component for the selected city.
 
-2. City Detailed View:
+2. City Itinerary Component:
 
-    - Create a reusable component for displaying detailed information about a city.
-    - Show the city's name and photo at the top.
-    - Provide a "Under Construction" section for future itineraries and activities.
+    - Develop a component that displays itineraries specific to the selected city.
+    - Display the following information for each itinerary:
+        - Photo and name of the person who published it.
+        - Price: Represented visually with a numeric value from 1 to 5 (small bills or an allusive icon).
+        - Duration: Indicate the number of hours the itinerary lasts.
+        - Likes count (default to 0).
+        - Display 3 or 4 thematic hashtags.
+        - Include a "view more" button that, for now, indicates "under construction."
 
-3. Backend Setup:
+3. Backend Integration:
 
-    - Develop the server to handle API requests.
-    - Set up a database to store city information.
-    - Create a "cities" collection in the database.
-    - Design the City model with properties such as name, photo link, and country.
-    - Implement routes and controllers for loading, getting all, getting by ID, modifying, and deleting cities.
-    - Ensure the backend is functional for interactions with tools like Insomnia/Postman.
+   - Communicate with the backend to fetch city-specific itineraries.
+   - Ensure proper data retrieval and rendering in the City Itinerary Component.
 
 ## Design
 
