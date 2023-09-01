@@ -19,24 +19,20 @@ const Carousel = ({ currentSlide, setCurrentSlide, filteredPlaces }) => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 m-8">
             {filteredPlaces.length === 0 ? (
                 <>
-                    <CardSkeleton />
-                    <CardSkeleton />
-                    <CardSkeleton />
-                    <CardSkeleton />
+                    <CardSkeleton key="skeleton1" />
+                    <CardSkeleton key="skeleton2" />
+                    <CardSkeleton key="skeleton3" />
+                    <CardSkeleton key="skeleton4" />
                 </>
             ) : (
                 filteredPlaces
                     .slice(currentSlide * imagesPerSlide, (currentSlide + 1) * imagesPerSlide)
-                    .map((place) => {
-                        return (
-                            <>
-                                <PlaceCard place={place} key={place._id} />
-                            </>
-                        );
-                    })
+                    .map((place) => (
+                        <PlaceCard place={place} key={place._id} />
+                    ))
             )}
         </div>
     );
 };
 
-export default Carousel
+export default Carousel;
