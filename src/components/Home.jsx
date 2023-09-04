@@ -1,4 +1,3 @@
-import React from 'react';
 import originalImage from '../assets/originalbg.jpg';
 import cutoutImage from '../assets/cuttedbg.png';
 import { Link } from 'react-router-dom';
