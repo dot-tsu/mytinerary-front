@@ -6,6 +6,8 @@ import Cities from './pages/Cities';
 import Homepage from './pages/Homepage';
 import PageNotFound from './pages/PageNotFound';
 import Details from './pages/Details';
+import SignIn from './pages/SignIn';
+import SignUp from './pages/SignUp';
 
 const router = createHashRouter([
   {
@@ -14,6 +16,8 @@ const router = createHashRouter([
     errorElement: <PageNotFound/>, 
     children: [
       { path: '/', element: <Homepage /> },
+      { path: '/signin', element: <SignIn /> },
+      { path: '/signup', element: <SignUp /> },
       { path: '/cities', element: <Cities /> },
       { path: '/cities/:placeId', element: <Details /> },
     ],

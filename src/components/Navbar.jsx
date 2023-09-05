@@ -107,10 +107,10 @@ const ProfileMenu = ({ isLoggedIn, handleLogoutClick, isScrolled }) => {
     } else {
         return (
             <div className="navbar-end">
-                <button
+                <Link to='/signup'
                     className={`btn btn-ghost font-bold ${isScrolled ? "text-black" : "text-white"}`}>
                     Login
-                </button>
+                </Link>
 
             </div>
         );
