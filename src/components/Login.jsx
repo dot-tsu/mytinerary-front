@@ -17,14 +17,15 @@ const Login = ({ isScrolled }) => {
         >
           Login
         </button>
+        
       <dialog id="loginModal" className="modal">
 
         <div className="modal-box bg-primary p-0">
-          <div className="flex flex-col items-center p-5">
+          <div className="flex flex-col items-center p-3">
             
               <>
-                <h3 className="text-4xl text-white">{isRegistering ? ('Welcome,') : ('Create Account')}</h3>
-                <h4 className="font-light text-3xl text-white">
+                <h3 className="text-lg xl:text-2xl text-white">{isRegistering ? ('Welcome,') : ('Create Account')}</h3>
+                <h4 className="font-light text-md xl:text-xl text-white">
                 {isRegistering ? ('Glad to see you!') : ('to get started now')}
                 </h4>
               </>
@@ -32,7 +33,7 @@ const Login = ({ isScrolled }) => {
           </div>
 
           <div className="flex flex-col items-center bg-white rounded-t-3xl">
-            <div className="form-control w-full max-w-xs mt-5">
+            <div className="form-control w-full max-w-xs mt-5 p-5 md:p-0">
               {isRegistering ? (
                 <>
                   <label className="label">
@@ -66,7 +67,7 @@ const Login = ({ isScrolled }) => {
                   <input
                     type="text"
                     placeholder="johndoe@somemail.com"
-                    className="input input-bordered shadow-sm bg-white w-full max-w-xs"
+                    className="input input-sm input-bordered shadow-sm bg-white w-full max-w-xs"
                   />
                   <label className="label">
                     <span className="label-text">Password</span>
@@ -74,7 +75,7 @@ const Login = ({ isScrolled }) => {
                   <input
                     type="password"
                     placeholder="Password"
-                    className="input input-bordered shadow-sm bg-white w-full max-w-xs"
+                    className="input input-sm input-bordered shadow-sm bg-white w-full max-w-xs"
                   />
                   <label className="label">
                     <span className="label-text">Confirm Password</span>
@@ -82,9 +83,9 @@ const Login = ({ isScrolled }) => {
                   <input
                     type="password"
                     placeholder="Confirm Password"
-                    className="input input-bordered shadow-sm bg-white w-full max-w-xs"
+                    className="input input-sm input-bordered  shadow-sm bg-white w-full max-w-xs"
                   />
-                  <button className="btn btn-primary shadow-sm mb-2 mt-7">
+                  <button className="btn  btn-primary shadow-sm mb-2 mt-7">
                     Sign up
                   </button>
                 </>
@@ -95,7 +96,7 @@ const Login = ({ isScrolled }) => {
                 Google Login
               </button>
 
-              <p className="text-center mb-8 mt-24">
+              <p className="text-center my-4">
                 {isRegistering
                   ? "Don't have an account? "
                   : "Already have an account? "}
