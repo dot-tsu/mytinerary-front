@@ -1,7 +1,6 @@
 import { useState, useEffect, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../assets/logo.png';
-import Login from './Login';
 
 const BurgerMenu = () => {
     return (
@@ -108,7 +107,11 @@ const ProfileMenu = ({ isLoggedIn, handleLogoutClick, isScrolled }) => {
     } else {
         return (
             <div className="navbar-end">
-                <Login isScrolled={isScrolled} />
+                <button
+                    className={`btn btn-ghost font-bold ${isScrolled ? "text-black" : "text-white"}`}>
+                    Login
+                </button>
+
             </div>
         );
     }
