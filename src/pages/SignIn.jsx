@@ -2,22 +2,24 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const SignIn = () => {
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-
-    const handleEmailChange = (e) => {
-        setEmail(e.target.value);
+    const initialFormData = {
+        email: '',
+        password: '',
     };
 
-    const handlePasswordChange = (e) => {
-        setPassword(e.target.value);
+    const [formData, setFormData] = useState(initialFormData);
+
+    const handleInputChange = (e) => {
+        const { name, value } = e.target;
+        setFormData({ ...formData, [name]: value });
     };
 
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        console.log('Email:', email);
-        console.log('Password:', password);
+        console.log('Email:', formData.email);
+        console.log('Password:', formData.password);
+
     };
 
     return (
@@ -32,8 +34,8 @@ const SignIn = () => {
                             className="input input-bordered w-full max-w-xs bg-white"
                             id="email"
                             name="email"
-                            value={email}
-                            onChange={handleEmailChange}
+                            value={formData.email}
+                            onChange={handleInputChange}
                             required
                         />
 
@@ -43,8 +45,8 @@ const SignIn = () => {
                             className="input input-bordered w-full max-w-xs bg-white"
                             id="password"
                             name="password"
-                            value={password}
-                            onChange={handlePasswordChange}
+                            value={formData.password}
+                            onChange={handleInputChange}
                             required
                         />
                         <a className='link link-hover place-self-end font-semibold mt-2'>Forgot your password?</a>
@@ -54,7 +56,7 @@ const SignIn = () => {
                     <div className='divider'>Or login with</div>
 
                     <button className='btn btn-accent w-full'>Login with Google</button>
-                        <p className='text-center pt-5'>Don&apos;t have an account? <Link to='/signup' className='link link-hover font-semibold'>Sign up now</Link></p>
+                    <p className='text-center pt-5'>Don&apos;t have an account? <Link to='/signup' className='link link-hover font-semibold'>Sign up now</Link></p>
                 </div>
             </div>
         </section>
