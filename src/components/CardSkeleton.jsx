@@ -1,5 +1,3 @@
-import React from 'react';
-
 const CardSkeleton = () => {
     return (
         <div className="rounded-md h-60 w-80 md:h-80 md:w-[30rem] bg-white shadow-xl animate-pulse grid grid-cols-3 grid-rows-[auto,auto,auto,1fr,1fr,auto] gap-2 p-1 pt-4">

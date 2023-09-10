@@ -1,5 +1,3 @@
-import React from 'react';
-
 const SearchBar = ({ searchQuery, onSearchQueryChange, fetchData }) => (
     <label className="flex shadow-lg">
         <input

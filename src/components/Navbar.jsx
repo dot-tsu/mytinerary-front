@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../assets/logo.png';
 
@@ -73,7 +73,7 @@ const Logo = ({ isScrolled }) => {
     );
 };
 
-const ProfileMenu = ({ isLoggedIn, handleLogoutClick, handleLoginClick, isScrolled }) => {
+const ProfileMenu = ({ isLoggedIn, handleLogoutClick, isScrolled }) => {
     if (isLoggedIn) {
         return (
             <div className="navbar-end">
@@ -107,10 +107,11 @@ const ProfileMenu = ({ isLoggedIn, handleLogoutClick, handleLoginClick, isScroll
     } else {
         return (
             <div className="navbar-end">
-                <button className={
-                    `btn btn-ghost font-bold ${isScrolled ? 'text-black' : 'text-white'}`} onClick={handleLoginClick}>
+                <Link to='/signup'
+                    className={`btn btn-ghost font-bold ${isScrolled ? "text-black" : "text-white"}`}>
                     Login
-                </button>
+                </Link>
+
             </div>
         );
     }
