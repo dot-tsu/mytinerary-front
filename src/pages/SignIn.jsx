@@ -1,7 +1,12 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { loginUser } from '../redux/authSlice';
 
 const SignIn = () => {
+    const dispatch = useDispatch();
+    const error = useSelector((state) => state.auth.error);
+
     const initialFormData = {
         email: '',
         password: '',
@@ -14,12 +19,17 @@ const SignIn = () => {
         setFormData({ ...formData, [name]: value });
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
 
-        console.log('Email:', formData.email);
-        console.log('Password:', formData.password);
+        await dispatch(loginUser(formData));
 
+        if (!error) {
+            const token = localStorage.getItem('token');
+            if (token) {
+                window.location.href = '/';
+            }
+        }
     };
 
     return (
@@ -50,6 +60,7 @@ const SignIn = () => {
                             required
                         />
                         <a className='link link-hover place-self-end font-semibold mt-2'>Forgot your password?</a>
+                        {error && <p className='text-red-500'>{error}</p>}
                         <button type="submit" className='btn btn-primary mt-5'>Login</button>
                     </form>
 
