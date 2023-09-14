@@ -1,5 +1,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import { Link } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
+import { logoutUser } from '../redux/authSlice';
 import logo from '../assets/logo.png';
 
 const BurgerMenu = () => {
@@ -32,7 +34,7 @@ const BurgerMenu = () => {
                     </li>
                 </ul>
             </div>
-        </div >
+        </div>
     );
 };
 
@@ -88,46 +90,48 @@ const ProfileMenu = ({ isLoggedIn, handleLogoutClick, isScrolled }) => {
                     </label>
                     <ul className="mt-3 p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
                         <li>
-                            <a href="#" className="justify-between">
+                            <a className="justify-between pointer-events-none">
                                 Profile
                             </a>
                         </li>
                         <li>
-                            <a href="#">Settings</a>
-                        </li>
-                        <li>
-                            <a href="#" onClick={handleLogoutClick}>
-                                Logout
+                            <a className="justify-between pointer-events-none">
+                                Settings
                             </a>
                         </li>
+                        <li>
+                            <button onClick={handleLogoutClick}>
+                                Logout
+                            </button>
+                        </li>
                     </ul>
+
                 </div>
             </div>
         );
     } else {
         return (
             <div className="navbar-end">
-                <Link to='/signup'
+                <Link to='/signin'
                     className={`btn btn-ghost font-bold ${isScrolled ? "text-black" : "text-white"}`}>
                     Login
                 </Link>
-
             </div>
         );
     }
 };
 
 const Navbar = () => {
-    const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const token = useSelector((state) => state.auth.token);
+    const dispatch = useDispatch();
+
+    const [isLoggedIn, setIsLoggedIn] = useState(!!token);
     const [isScrolled, setIsScrolled] = useState(false);
 
-    const handleLoginClick = useCallback(() => {
-        setIsLoggedIn(true);
-    }, []);
-
     const handleLogoutClick = useCallback(() => {
+        dispatch(logoutUser());
         setIsLoggedIn(false);
-    }, []);
+    }, [dispatch]);
 
     const handleScroll = useCallback(() => {
         const scrolled = window.scrollY > 0;
@@ -148,7 +152,15 @@ const Navbar = () => {
             <BurgerMenu />
             <DesktopMenu isScrolled={isScrolled} />
             <Logo isScrolled={isScrolled} />
-            <ProfileMenu isLoggedIn={isLoggedIn} isScrolled={isScrolled} handleLogoutClick={handleLogoutClick} handleLoginClick={handleLoginClick} />
+            {isLoggedIn ? (
+                <ProfileMenu isLoggedIn={isLoggedIn} isScrolled={isScrolled} handleLogoutClick={handleLogoutClick} />
+            ) : (
+                <div className='navbar-end'>
+                    <Link to='/signin' className={`btn btn-ghost font-bold ${isScrolled ? "text-black" : "text-white"}`}>
+                        Login
+                    </Link>
+                </div>
+            )}
         </nav>
     );
 };
