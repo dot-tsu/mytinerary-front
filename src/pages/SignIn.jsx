@@ -3,11 +3,12 @@ import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { loginUser } from '../redux/authSlice';
 import GoogleSignInButton from '../components/GoogleSignInButton';
+import { useNavigate } from 'react-router-dom';
 
 const SignIn = () => {
     const dispatch = useDispatch();
     const token = useSelector((state) => state.auth.token);
-
+    const navigate = useNavigate()
     const [isLoggedIn] = useState(!!token);
 
     if (isLoggedIn) {
@@ -35,10 +36,7 @@ const SignIn = () => {
 
         if (!error) {
             const token = localStorage.getItem('token');
-            if (token) {
-                // window.location.href = '/'; on localhost
-                window.location.href = '/myTinerary-lucaDiMarco/';
-            }
+            if (token) navigate('/');
         }
     };
 

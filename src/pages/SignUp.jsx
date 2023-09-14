@@ -5,11 +5,13 @@ import { useSelector, useDispatch } from 'react-redux';
 import { fetchCountries } from '../redux/countriesSlice';
 import { registerUser } from '../redux/authSlice';
 import GoogleSignInButton from '../components/GoogleSignInButton';
+import { useNavigate } from 'react-router-dom';
 
 const SignUp = () => {
   const token = useSelector((state) => state.auth.token);
   const [isLoggedIn] = useState(!!token);
-
+  const navigate = useNavigate('/');
+  
   if(isLoggedIn){
       console.info('Signin and signout routes cannot be accesed if logged in')
        window.location.href = '/';
@@ -48,8 +50,7 @@ const SignUp = () => {
     if (!registrationResult.error) {
       const token = registrationResult.payload.token;
       localStorage.setItem('token', token);
-      // window.location.href = '/'; on localhost
-      window.location.href = '/myTinerary-lucaDiMarco/';
+      if (token) navigate('/');
     }
   };
   const countries = useSelector((state) => state.countries.countries);
