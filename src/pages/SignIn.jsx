@@ -10,9 +10,9 @@ const SignIn = () => {
 
     const [isLoggedIn] = useState(!!token);
 
-    if(isLoggedIn){
+    if (isLoggedIn) {
         console.info('Signin and signout routes cannot be accesed if logged in')
-         window.location.href = '/';
+        window.location.href = '/';
     }
     const error = useSelector((state) => state.auth.error);
 
@@ -36,7 +36,8 @@ const SignIn = () => {
         if (!error) {
             const token = localStorage.getItem('token');
             if (token) {
-                window.location.href = '/';
+                // window.location.href = '/'; on localhost
+                window.location.href = '/myTinerary-lucaDiMarco/';
             }
         }
     };

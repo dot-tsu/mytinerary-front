@@ -48,8 +48,8 @@ const SignUp = () => {
     if (!registrationResult.error) {
       const token = registrationResult.payload.token;
       localStorage.setItem('token', token);
-
-      window.location.href = '/';
+      // window.location.href = '/'; on localhost
+      window.location.href = '/myTinerary-lucaDiMarco/';
     }
   };
   const countries = useSelector((state) => state.countries.countries);
