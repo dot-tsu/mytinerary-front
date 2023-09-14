@@ -25,7 +25,7 @@ const SignUp = () => {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (formData.password !== formData.confirmPassword) {
@@ -34,11 +34,17 @@ const SignUp = () => {
     }
 
     setPasswordsMatch(true);
-    // Remove 'confirmPassword' from the data sent to the backend
-    const { confirmPassword, ...dataToSend } = formData;
-    dispatch(registerUser(dataToSend));
-  };
 
+    const { confirmPassword, ...dataToSend } = formData;
+    const registrationResult = await dispatch(registerUser(dataToSend));
+
+    if (!registrationResult.error) {
+      const token = registrationResult.payload.token;
+      localStorage.setItem('token', token);
+
+      window.location.href = '/';
+    }
+  };
   const countries = useSelector((state) => state.countries.countries);
   const dispatch = useDispatch();
   const defaultprofilePicUrl = 'https://www.hardiagedcare.com.au/wp-content/uploads/2019/02/default-avatar-profile-icon-vector-18942381.jpg';
