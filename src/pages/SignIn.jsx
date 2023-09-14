@@ -6,6 +6,14 @@ import GoogleSignInButton from '../components/GoogleSignInButton';
 
 const SignIn = () => {
     const dispatch = useDispatch();
+    const token = useSelector((state) => state.auth.token);
+
+    const [isLoggedIn] = useState(!!token);
+
+    if(isLoggedIn){
+        console.info('Signin and signout routes cannot be accesed if logged in')
+         window.location.href = '/';
+    }
     const error = useSelector((state) => state.auth.error);
 
     const initialFormData = {
