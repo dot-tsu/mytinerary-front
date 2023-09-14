@@ -1,13 +1,14 @@
 import { useEffect, useRef } from 'react';
-
+import { useNavigate } from 'react-router';
 const GoogleSignInButton = () => {
   const googleButton = useRef(); 
-
+ const navigate = useNavigate('/');
   useEffect(() => {
 
     const handleCredentialResponse = (response) => {
       localStorage.setItem('token', response.credential);
       console.log("Encoded JWT ID token: " + localStorage.getItem('token'));
+      navigate('/');
     };
 
     const initializeGoogleSignIn = () => {
