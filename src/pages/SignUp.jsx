@@ -89,8 +89,8 @@ const SignUp = () => {
               <div className="mt-1 flex items-center">
                 <div className="avatar">
                   <div className="w-10 mx-3 rounded-full">
-                  <img
-                      src={formData.profilePicUrl || defaultprofilePicUrl} 
+                    <img
+                      src={formData.profilePicUrl || defaultprofilePicUrl}
                       alt="Profile Preview"
                     />
                   </div>
@@ -157,12 +157,15 @@ const SignUp = () => {
               onChange={handleInputChange}
               required
             >
-              <option disabled selected>Select your country</option>
+              <option disabled value="">
+                Select your country
+              </option>
               {countries.map((country, index) => (
-                <option key={index}>{country}</option>
+                <option key={index} value={country}>
+                  {country}
+                </option>
               ))}
             </select>
-
             {!passwordsMatch && (
               <p className="text-red-500">Passwords do not match.</p>
             )}
