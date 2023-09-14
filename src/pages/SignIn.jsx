@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { loginUser } from '../redux/authSlice';
+import GoogleSignInButton from '../components/GoogleSignInButton';
 
 const SignIn = () => {
     const dispatch = useDispatch();
@@ -66,7 +67,9 @@ const SignIn = () => {
 
                     <div className='divider'>Or login with</div>
 
-                    <button className='btn btn-accent w-full'>Login with Google</button>
+                    <div>
+                        <GoogleSignInButton />
+                    </div>
                     <p className='text-center pt-5'>Don&apos;t have an account? <Link to='/signup' className='link link-hover font-semibold'>Sign up now</Link></p>
                 </div>
             </div>

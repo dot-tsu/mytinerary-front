@@ -3,14 +3,15 @@ import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchCountries } from '../redux/countriesSlice';
 import { registerUser } from '../redux/authSlice';
+import GoogleSignInButton from '../components/GoogleSignInButton';
 
 const SignUp = () => {
   const [formData, setFormData] = useState({
     name: '',
-    lastName: '', 
+    lastName: '',
     email: '',
     password: '',
-    confirmPassword: '', 
+    confirmPassword: '',
     country: '',
   });
 
@@ -43,10 +44,10 @@ const SignUp = () => {
   }, [dispatch]);
 
   return (
-    <section id="signup" className="flex h-screen items-center justify-center">
+    <section id="signup" className="flex min-h-screen items-center justify-center max-w-xl py-28">
       <div className="bg-primary w-2/3 rounded-3xl shadow-xl">
-        <h2 className="text-4xl text-white text-center p-5 font-light">Create account</h2>
-        <div className="bg-white p-8 rounded-3xl rounded-tr-none">
+        <h2 className="text-2xl text-white text-center p-2 font-light">Create account</h2>
+        <div className="bg-white p-6 rounded-3xl rounded-tr-none">
           <form onSubmit={handleSubmit} className="form-control">
             <div className="flex gap-4">
               <div className="flex-1">
@@ -55,7 +56,7 @@ const SignUp = () => {
                 </label>
                 <input
                   type="text"
-                  className="input input-bordered w-full bg-white"
+                  className="input input-sm input-bordered w-full bg-white"
                   id="name"
                   name="name"
                   value={formData.name}
@@ -69,10 +70,10 @@ const SignUp = () => {
                 </label>
                 <input
                   type="text"
-                  className="input input-bordered w-full bg-white"
+                  className="input input-sm input-bordered w-full bg-white"
                   id="lastName"
                   name="lastName"
-                  value={formData.lastName} 
+                  value={formData.lastName}
                   onChange={handleInputChange}
                   required
                 />
@@ -84,7 +85,7 @@ const SignUp = () => {
             </label>
             <input
               type="email"
-              className="input input-bordered w-full bg-white"
+              className="input input-sm input-bordered w-full bg-white"
               id="email"
               name="email"
               value={formData.email}
@@ -97,7 +98,7 @@ const SignUp = () => {
             </label>
             <input
               type="password"
-              className="input input-bordered w-full bg-white"
+              className="input input-sm input-bordered w-full bg-white"
               id="password"
               name="password"
               value={formData.password}
@@ -110,7 +111,7 @@ const SignUp = () => {
             </label>
             <input
               type="password"
-              className="input input-bordered w-full bg-white"
+              className="input input-sm input-bordered w-full bg-white"
               id="confirmPassword"
               name="confirmPassword"
               value={formData.confirmPassword}
@@ -122,7 +123,7 @@ const SignUp = () => {
               <span className="label-text">Country</span>
             </label>
             <select
-              className="select select-bordered w-full bg-white"
+              className="select select-sm select-bordered w-full bg-white"
               id="country"
               name="country"
               value={formData.country}
@@ -139,15 +140,15 @@ const SignUp = () => {
               <p className="text-red-500">Passwords do not match.</p>
             )}
 
-            <button type="submit" className="btn btn-primary mt-5">
+            <button type="submit" className="btn btn-sm btn-primary mt-5">
               Sign Up
             </button>
           </form>
 
           <div className="divider">Or sign up with</div>
-
-          <button className="btn btn-accent w-full">Sign Up with Google</button>
-
+          <div>
+            <GoogleSignInButton />
+          </div>
           <p className="text-center pt-5">
             Already have an account? <Link to="/signin" className="link link-hover font-semibold">Sign in</Link>
           </p>
