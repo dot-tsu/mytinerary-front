@@ -42,7 +42,7 @@ const SignIn = () => {
                         <label htmlFor="email"><span className="label-text">What is your email?</span></label>
                         <input
                             type="email"
-                            className="input input-bordered w-full max-w-xs bg-white"
+                            className="input input-sm input-bordered w-full max-w-xs bg-white"
                             id="email"
                             name="email"
                             value={formData.email}
@@ -53,7 +53,7 @@ const SignIn = () => {
                         <label htmlFor="password"><span className="label-text">What is your password?</span></label>
                         <input
                             type="password"
-                            className="input input-bordered w-full max-w-xs bg-white"
+                            className="input input-sm input-bordered w-full max-w-xs bg-white"
                             id="password"
                             name="password"
                             value={formData.password}
@@ -62,7 +62,7 @@ const SignIn = () => {
                         />
                         <a className='link link-hover place-self-end font-semibold mt-2'>Forgot your password?</a>
                         {error && <p className='text-red-500'>{error}</p>}
-                        <button type="submit" className='btn btn-primary mt-5'>Login</button>
+                        <button type="submit" className='btn btn-sm btn-primary mt-5'>Login</button>
                     </form>
 
                     <div className='divider'>Or login with</div>
