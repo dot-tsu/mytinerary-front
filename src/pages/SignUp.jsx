@@ -14,7 +14,7 @@ const SignUp = () => {
     password: '',
     confirmPassword: '',
     country: '',
-    profilePictureUrl: '',
+    profilePicUrl: '',
   });
 
   const [passwordsMatch, setPasswordsMatch] = useState(true);
@@ -40,7 +40,7 @@ const SignUp = () => {
 
   const countries = useSelector((state) => state.countries.countries);
   const dispatch = useDispatch();
-  const defaultProfilePictureUrl = 'https://www.hardiagedcare.com.au/wp-content/uploads/2019/02/default-avatar-profile-icon-vector-18942381.jpg';
+  const defaultprofilePicUrl = 'https://www.hardiagedcare.com.au/wp-content/uploads/2019/02/default-avatar-profile-icon-vector-18942381.jpg';
   useEffect(() => {
     dispatch(fetchCountries());
   }, [dispatch]);
@@ -83,14 +83,14 @@ const SignUp = () => {
             </div>
 
             <div className="flex-1">
-              <label htmlFor="profilePictureUrl" >
+              <label htmlFor="profilePicUrl" >
                 <span className="label-text">Profile picture url</span>
               </label>
               <div className="mt-1 flex items-center">
                 <div className="avatar">
                   <div className="w-10 mx-3 rounded-full">
                   <img
-                      src={formData.profilePictureUrl || defaultProfilePictureUrl} 
+                      src={formData.profilePicUrl || defaultprofilePicUrl} 
                       alt="Profile Preview"
                     />
                   </div>
@@ -98,9 +98,9 @@ const SignUp = () => {
                 <input
                   type="text"
                   className="input input-sm input-bordered w-full bg-white"
-                  id="profilePictureUrl"
-                  name="profilePictureUrl"
-                  value={formData.profilePictureUrl}
+                  id="profilePicUrl"
+                  name="profilePicUrl"
+                  value={formData.profilePicUrl}
                   onChange={handleInputChange}
                 />
 
