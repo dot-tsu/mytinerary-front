@@ -6,8 +6,8 @@ const GoogleSignInButton = () => {
   useEffect(() => {
 
     const handleCredentialResponse = (response) => {
-      console.log("Encoded JWT ID token: " + response.credential);
       localStorage.setItem('token', response.credential);
+      console.log("Encoded JWT ID token: " + localStorage.getItem('token'));
     };
 
     const initializeGoogleSignIn = () => {
