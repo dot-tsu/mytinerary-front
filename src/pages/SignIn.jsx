@@ -34,7 +34,7 @@ const SignIn = () => {
     };
 
     return (
-        <section id="signin" className='flex h-screen items-center justify-center'>
+        <section id="signin" className='flex min-h-screen items-center justify-center max-w-xl py-28'>
             <div className="bg-primary w-2/3 rounded-3xl shadow-xl">
                 <h2 className="text-4xl text-white text-center p-5 font-light">Login</h2>
                 <div className='bg-white p-8 rounded-3xl rounded-tr-none'>
