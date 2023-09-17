@@ -1,34 +1,39 @@
-# MyTinerary Frontend - Sprint 3
+# MyTinerary Frontend - Sprint 4
 
-Welcome to MyTinerary! This README.md file provides an overview of the goals and minimum requirements set for Sprint 3 of the frontend development process. The focus in this sprint is to enhance the user experience by implementing new features related to city itineraries.
+Welcome to MyTinerary! This README.md file provides an overview of the goals and minimum requirements set for Sprint 4 of the frontend development process. The focus in this sprint is to enhance the user experience by implementing new features related to city itineraries.
 
-## MVC for Sprint 3
+## MVC for Sprint 4
 
-### Sprint 3 Goals
+### Sprint 4 Goals
 
-The primary focus of Sprint 3 is to further enhance the user experience by implementing city-specific itineraries. Below are the key features and tasks planned for this sprint:
+The primary focus of Sprint 4 is to introduce user authentication features to enhance the overall user experience. Below are the key features and tasks planned for this sprint:
 
-1. City Selection Enhancement:
+1. Sign Up Component:
 
-    - Improve the city selection process.
-    - Ensure that clicking on a city in the "Cities" section correctly identifies the chosen city.
-    - Navigate to a detailed view component for the selected city.
+    - Create a Sign Up component that allows users to register for an account.
+    - Implement a form with the following fields:
+        - First Name
+        - Last Name
+        - Email
+        - Password
+        - URL of the Photo
+        - Country (selectable from a dropdown menu).
+    - Provide an option for users to register using their Google account.
 
-2. City Itinerary Component:
+2. Sign In Component:
 
     - Develop a component that displays itineraries specific to the selected city.
-    - Display the following information for each itinerary:
-        - Photo and name of the person who published it.
-        - Price: Represented visually with a numeric value from 1 to 5 (small bills or an allusive icon).
-        - Duration: Indicate the number of hours the itinerary lasts.
-        - Likes count (default to 0).
-        - Display 3 or 4 thematic hashtags.
-        - Include a "view more" button that, for now, indicates "under construction."
+        - Develop a Sign In component that enables users to log into their accounts.
+        - Implement a form where users can enter their email and password.
+        - Include an option for users to log in using their Google account.
+3. Sign Out Functionality:
+        - Implement a Sign Out action that allows users to log out of the application.
 
-3. Backend Integration:
+## Additional Requirements
 
-   - Communicate with the backend to fetch city-specific itineraries.
-   - Ensure proper data retrieval and rendering in the City Itinerary Component.
+- Ensure that the Sign Up and Sign In components are user-friendly, with proper input validation and error handling.
+- Design the user interface for these components to align with the existing MyTinerary style.
+- Implement user sessions and authentication state management to control access to certain parts of the application based on user authentication status.
 
 ## Design
 
